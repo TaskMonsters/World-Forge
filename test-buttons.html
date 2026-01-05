@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hierarchy Tree Button Test</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    /* Light mode (default) */
+    :root {
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F5F5F5;
+      --text-primary: #333333;
+      --text-secondary: #666666;
+      --border-color: #333333;
+      --card-bg: #F0F0F0;
+    }
+    
+    /* Dark mode */
+    [data-theme="night"] {
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #1a1a1a;
+      --text-primary: #F0F0F0;
+      --text-secondary: #b3b3b3;
+      --border-color: #666666;
+      --card-bg: #1a1a1a;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    
+    .theme-toggle {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+    
+    .modal-demo {
+      background: var(--bg-primary);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .modal-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+    }
+    
+    .modal-header h2 {
+      font-size: 1.25rem;
+      margin: 0;
+    }
+    
+    .toolbar {
+      padding: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      background: var(--bg-primary);
+    }
+    
+    /* OLD STYLE (with --gray-700) */
+    .btn-old {
+      padding: 0.5rem 1rem;
+      background: #404040; /* --gray-700 */
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    
+    /* NEW STYLE (with --card-bg) - THE FIX */
+    .btn-new {
+      padding: 0.5rem 1rem;
+      background: var(--card-bg);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.875rem;
+    }
+    
+    .btn-old:hover,
+    .btn-new:hover {
+      opacity: 0.8;
+    }
+    
+    .modal-body {
+      padding: 2rem;
+      min-height: 200px;
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+    }
+    
+    .section {
+      margin-bottom: 3rem;
+    }
+    
+    .section h3 {
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .comparison-item {
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+    
+    .comparison-item h4 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    
+    .button-demo {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .label {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      background: #ef4444;
+      color: white;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .label.success {
+      background: #10b981;
+    }
+    
+    code {
+      background: var(--bg-secondary);
+      padding: 0.125rem 0.375rem;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">
+    🌙 Toggle Theme
+  </button>
+  
+  <div class="container">
+    <h1>Hierarchy Tree Toolbar Button Fix</h1>
+    
+    <div class="section">
+      <h3>Issue Description</h3>
+      <p>The three toolbar buttons in the hierarchy tree modal were using <code>var(--gray-700)</code> which is a fixed dark color (#404040). This caused them to appear dark in both light and dark modes, making them inconsistent with the theme.</p>
+    </div>
+    
+    <div class="section">
+      <h3>Solution</h3>
+      <p>Changed the button background from <code>var(--gray-700)</code> to <code>var(--card-bg)</code>, which adapts to the theme:</p>
+      <ul style="margin-left: 1.5rem; margin-top: 0.5rem; line-height: 1.8;">
+        <li>Light mode: <code>--card-bg = #F0F0F0</code> (light gray)</li>
+        <li>Dark mode: <code>--card-bg = #1a1a1a</code> (dark gray)</li>
+      </ul>
+    </div>
+    
+    <div class="comparison">
+      <div class="comparison-item">
+        <span class="label">BEFORE (Broken)</span>
+        <h4>Old Style (--gray-700)</h4>
+        <div class="button-demo">
+          <button class="btn-old">🌳 Add Root Node</button>
+          <button class="btn-old">🔄 Reset Layout</button>
+          <button class="btn-old">📷 Export Image</button>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary);">
+          ❌ Always dark regardless of theme
+        </p>
+      </div>
+      
+      <div class="comparison-item">
+        <span class="label success">AFTER (Fixed)</span>
+        <h4>New Style (--card-bg)</h4>
+        <div class="button-demo">
+          <button class="btn-new">🌳 Add Root Node</button>
+          <button class="btn-new">🔄 Reset Layout</button>
+          <button class="btn-new">📷 Export Image</button>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary);">
+          ✅ Adapts to light/dark theme
+        </p>
+      </div>
+    </div>
+    
+    <div class="section" style="margin-top: 3rem;">
+      <h3>Full Modal Preview</h3>
+      <div class="modal-demo">
+        <div class="modal-header">
+          <h2>Test Hierarchy - Hierarchy Tree</h2>
+        </div>
+        <div class="toolbar">
+          <button class="btn-new">🌳 Add Root Node</button>
+          <button class="btn-new">🔄 Reset Layout</button>
+          <button class="btn-new">📷 Export Image</button>
+        </div>
+        <div class="modal-body">
+          <p>🌳 No nodes yet<br><small>Click "Add Root Node" to start building your hierarchy tree</small></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section" style="margin-top: 3rem;">
+      <h3>Instructions</h3>
+      <p>Click the <strong>"Toggle Theme"</strong> button in the top-right corner to switch between light and dark modes. Notice how the FIXED buttons (right column) adapt to the theme, while the BROKEN buttons (left column) stay dark.</p>
+    </div>
+  </div>
+  
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'night' ? 'day' : 'night';
+      body.setAttribute('data-theme', newTheme);
+    }
+  </script>
+</body>
+</html>

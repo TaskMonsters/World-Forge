@@ -1,0 +1,4 @@
+WorldForge v3.30.0 - Map Management Fix Edition
+Released: January 4, 2026
+
+Complete fix for map save/load/delete functionality with modern modal-based UI.

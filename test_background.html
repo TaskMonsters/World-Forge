@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Test - WorldForge</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .canvas-container {
+            background: white;
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+        canvas {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .info {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .success {
+            color: #4ade80;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🌲 Background Image Test - Forest Cover Fix</h1>
+        
+        <div class="canvas-container">
+            <canvas id="testCanvas" width="1200" height="600"></canvas>
+        </div>
+        
+        <div class="info">
+            <h3 class="success">✅ Test Results:</h3>
+            <p><strong>Expected:</strong> Forest background should display as a single image that covers the entire canvas without tiling/repeating.</p>
+            <p><strong>Implementation:</strong> Using CSS background-size: cover logic with canvas drawImage scaling.</p>
+            <p id="status">Loading forest background...</p>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('testCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Load forest background
+        const img = new Image();
+        img.onload = () => {
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            // Calculate scaling to cover the entire canvas (same logic as app.js)
+            const imgRatio = img.width / img.height;
+            const canvasRatio = width / height;
+            
+            let drawWidth, drawHeight;
+            if (canvasRatio > imgRatio) {
+                // Canvas is wider than image ratio
+                drawWidth = width;
+                drawHeight = width / imgRatio;
+            } else {
+                // Canvas is taller than image ratio
+                drawHeight = height;
+                drawWidth = height * imgRatio;
+            }
+            
+            // Center the image
+            const offsetX = (width - drawWidth) / 2;
+            const offsetY = (height - drawHeight) / 2;
+            
+            ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+            
+            document.getElementById('status').innerHTML = `
+                <span class="success">✅ Forest background loaded successfully!</span><br>
+                Image dimensions: ${img.width}x${img.height}<br>
+                Canvas dimensions: ${width}x${height}<br>
+                Scaled to: ${drawWidth.toFixed(0)}x${drawHeight.toFixed(0)}<br>
+                Offset: (${offsetX.toFixed(0)}, ${offsetY.toFixed(0)})
+            `;
+        };
+        img.onerror = () => {
+            document.getElementById('status').innerHTML = '<span style="color: #f87171;">❌ Failed to load forest background</span>';
+        };
+        img.src = 'assets/backgrounds/forest_jungle_green.png';
+    </script>
+</body>
+</html>

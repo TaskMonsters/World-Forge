@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WorldForge - Elite Author Edition</title>
+  <meta name="description" content="Professional world building suite for elite authors">
+  <meta name="theme-color" content="#ffffff">
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div id="app" class="app-container">
+    <!-- Side Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="logo.png" alt="WorldForge Logo" class="sidebar-logo">
+        <div class="sidebar-title">
+          <h1>WorldForge</h1>
+          <span>Elite Author Edition</span>
+        </div>
+      </div>
+      
+      <nav class="sidebar-nav" id="sidebarNav">
+        <!-- Navigation will be populated by JavaScript -->
+      </nav>
+      
+      <div class="sidebar-footer">
+        <div class="theme-toggle" id="themeToggle">
+          <span class="theme-toggle-label" id="themeLabel">🌙 Night Mode</span>
+          <div class="theme-toggle-switch">
+            <div class="theme-toggle-slider"></div>
+          </div>
+        </div>
+        <div class="settings-dropdown" id="settingsDropdown">
+          <button class="sidebar-btn" id="settingsBtn" title="Settings">
+            ⚙️ Settings
+          </button>
+          <div class="settings-menu" id="settingsMenu">
+            <button class="settings-menu-item" id="exportPdfBtn" onclick="MapBuilder.exportMapAsPDF()">
+              <span class="menu-icon">📄</span>
+              <span>Export PDF</span>
+            </button>
+            <button class="settings-menu-item" id="exportJsonBtn">
+              <span class="menu-icon">💾</span>
+              <span>Export JSON</span>
+            </button>
+            <button class="settings-menu-item" id="clearDataBtn">
+              <span class="menu-icon">🗑️</span>
+              <span>Clear All Data</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-area">
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <div class="breadcrumbs" id="breadcrumbs">
+          <span>Home</span>
+        </div>
+        <div class="top-bar-actions">
+          <div class="save-indicator" id="saveIndicator">
+            <span class="save-dot"></span>
+            <span id="saveText">All changes saved</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="content-area" id="mainContent">
+        <!-- Content will be dynamically rendered -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal Container -->
+  <div id="modalContainer"></div>
+  
+  <!-- Context Menu Container -->
+  <div id="contextMenuContainer"></div>
+
+  <!-- Image Lightbox -->
+  <div id="imageLightbox" class="image-lightbox" style="display: none;">
+    <div class="lightbox-overlay" id="lightboxOverlay"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" title="Close (ESC)">×</button>
+      <img id="lightboxImage" class="lightbox-image" alt="Full size image">
+    </div>
+  </div>
+
+  <!-- Application Script -->
+  <script src="assets-manifest.js"></script>
+  <script src="app.js"></script>
+  
+  <!-- Service Worker Registration -->
+  <script>
+    // Register service worker for PWA functionality
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then((registration) => {
+            console.log('Service Worker registered successfully:', registration.scope);
+          })
+          .catch((error) => {
+            console.log('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
