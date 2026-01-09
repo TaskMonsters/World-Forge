@@ -1677,6 +1677,7 @@ const Views = {
           <div style="margin-bottom: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color);">
             <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Controls:</h4>
             <div style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+              <div style="margin-bottom: 0.25rem;"><strong>Icons:</strong> Click to select • Double-click to edit • Ctrl/Cmd+Click for multi-select • Delete to remove</div>
               <div style="margin-bottom: 0.25rem;"><strong>Assets:</strong> Click to select • Drag to move • +/- to resize • R to rotate • Backspace to delete</div>
               <div><strong>Labels:</strong> Click to select • Drag to move • Backspace to delete</div>
             </div>
@@ -3236,6 +3237,8 @@ const MapBuilder = {
   dragOffsetY: 0,
   isDraggingNode: false,
   selectedNode: null,
+  selectedNodes: [], // Array for multi-select
+  isMultiSelectMode: false,
   currentBackground: 'winter',
   drawColor: '#000000',
   isPanning: false,
@@ -3268,6 +3271,19 @@ const MapBuilder = {
     if (!this.canvas) return;
     
     this.ctx = this.canvas.getContext('2d');
+    
+    // Load existing map data from AppState
+    if (AppState.currentWorld) {
+      this.nodes = AppState.currentWorld.mapNodes || [];
+      this.drawings = AppState.currentWorld.mapDrawings || [];
+      this.currentBackground = AppState.currentWorld.mapBackground || 'winter';
+      // Initialize placedAssets array if it doesn't exist
+      if (!AppState.currentWorld.placedAssets) {
+        AppState.currentWorld.placedAssets = [];
+      }
+      this.textLabels = AppState.currentWorld.mapLabels || [];
+    }
+    
     this.setupEventListeners();
     this.setupToolbar();
     this.render();
@@ -3399,7 +3415,24 @@ const MapBuilder = {
     document.addEventListener('keydown', (e) => {
       // Handle Delete/Backspace for both assets and nodes
       if (e.key === 'Delete' || e.key === 'Backspace') {
-        // Delete selected node (icon/emoji)
+        // Delete multiple selected nodes
+        if (this.selectedNodes.length > 0) {
+          if (confirm(`Delete ${this.selectedNodes.length} selected icon(s)?`)) {
+            this.selectedNodes.forEach(node => {
+              const index = AppState.currentWorld.mapNodes.indexOf(node);
+              if (index > -1) {
+                AppState.currentWorld.mapNodes.splice(index, 1);
+              }
+            });
+            this.selectedNodes = [];
+            this.selectedNode = null;
+            this.render();
+            AppState.save();
+          }
+          e.preventDefault();
+          return;
+        }
+        // Delete single selected node (icon/emoji)
         if (this.selectedNode) {
           const index = AppState.currentWorld.mapNodes.indexOf(this.selectedNode);
           if (index > -1) {
@@ -3533,8 +3566,26 @@ const MapBuilder = {
         this.editNodeLabel(clickedNode);
         return;
       }
+      
+      // Multi-select with Ctrl/Cmd key
+      if (e.ctrlKey || e.metaKey) {
+        // Toggle selection
+        const index = this.selectedNodes.indexOf(clickedNode);
+        if (index > -1) {
+          // Deselect
+          this.selectedNodes.splice(index, 1);
+        } else {
+          // Add to selection
+          this.selectedNodes.push(clickedNode);
+        }
+        this.selectedNode = null;
+        this.render();
+        return;
+      }
+      
       // Single click to start dragging and select node
       this.selectedNode = clickedNode;
+      this.selectedNodes = []; // Clear multi-select when single selecting
       this.draggedNode = clickedNode;
       this.dragOffsetX = (x - this.viewOffsetX) - clickedNode.x;
       this.dragOffsetY = (y - this.viewOffsetY) - clickedNode.y;
@@ -3545,6 +3596,7 @@ const MapBuilder = {
     
     // Deselect any selected node, asset, or label when clicking on empty space
     this.selectedNode = null;
+    this.selectedNodes = [];
     this.selectedPlacedAsset = null;
     this.selectedLabel = null;
     
@@ -3688,6 +3740,7 @@ const MapBuilder = {
       `,
       `
         <button class="btn btn-danger" onclick="MapBuilder.deleteNode('${node.id}')">Delete</button>
+        <button class="btn btn-secondary" onclick="MapBuilder.duplicateNode('${node.id}')">Duplicate</button>
         <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
         <button class="btn btn-primary" onclick="MapBuilder.saveNodeEdit('${node.id}')">Save</button>
       `
@@ -3721,6 +3774,26 @@ const MapBuilder = {
       Modal.close();
       this.render();
     }
+  },
+  
+  duplicateNode(nodeId) {
+    const node = AppState.currentWorld.mapNodes.find(n => n.id === nodeId);
+    if (!node) return;
+    
+    // Create a duplicate with a slight offset
+    const duplicatedNode = {
+      id: 'node-' + Date.now(),
+      x: node.x + 50, // Offset by 50 pixels
+      y: node.y + 50,
+      icon: node.icon,
+      label: node.label + ' (Copy)',
+      labelColor: node.labelColor || '#000000'
+    };
+    
+    AppState.currentWorld.mapNodes.push(duplicatedNode);
+    AppState.save();
+    Modal.close();
+    this.render();
   },
   
   openIconPickerDirect() {
@@ -3869,6 +3942,45 @@ const MapBuilder = {
   allEmojis: [], // Cache all emojis
   
   toggleEmojiDropdown() {
+    // Use native system emoji picker instead of custom dropdown
+    // Create a temporary input element to trigger the system emoji picker
+    const tempInput = document.createElement('input');
+    tempInput.type = 'text';
+    tempInput.style.position = 'absolute';
+    tempInput.style.left = '-9999px';
+    tempInput.style.opacity = '0';
+    document.body.appendChild(tempInput);
+    
+    // Focus the input and try to trigger emoji picker
+    tempInput.focus();
+    
+    // Listen for emoji selection
+    tempInput.addEventListener('input', (e) => {
+      const emoji = e.target.value;
+      if (emoji) {
+        this.selectIcon(emoji);
+      }
+      document.body.removeChild(tempInput);
+    });
+    
+    // For browsers that support it, try to open emoji picker
+    // Note: This is browser-specific and may not work everywhere
+    if (typeof tempInput.showPicker === 'function') {
+      try {
+        tempInput.showPicker();
+      } catch (e) {
+        // Fallback: show the old dropdown if native picker fails
+        document.body.removeChild(tempInput);
+        this.showFallbackEmojiDropdown();
+      }
+    } else {
+      // Fallback for browsers without showPicker
+      document.body.removeChild(tempInput);
+      this.showFallbackEmojiDropdown();
+    }
+  },
+  
+  showFallbackEmojiDropdown() {
     const dropdown = document.getElementById('emojiDropdown');
     const colorDropdown = document.getElementById('colorPickerDropdown');
     if (!dropdown) return;
@@ -4529,6 +4641,11 @@ const MapBuilder = {
     AppState.currentWorld.mapNodes = this.nodes;
     AppState.currentWorld.mapDrawings = this.drawings;
     AppState.currentWorld.mapBackground = this.currentBackground;
+    AppState.currentWorld.mapLabels = this.textLabels;
+    // Ensure placedAssets is properly synced
+    if (!AppState.currentWorld.placedAssets) {
+      AppState.currentWorld.placedAssets = [];
+    }
     AppState.currentWorld.placedAssets = this.placedAssets;
     
     AppState.save();
@@ -4794,9 +4911,17 @@ const MapBuilder = {
     // Draw nodes
     if (AppState.currentWorld.mapNodes) {
       AppState.currentWorld.mapNodes.forEach(node => {
-        // Draw selection indicator for selected node
-        if (this.selectedNode === node) {
-          this.ctx.strokeStyle = '#3b82f6';
+        // Draw selection indicator for multi-selected nodes
+        if (this.selectedNodes.includes(node)) {
+          this.ctx.strokeStyle = '#10b981'; // Green for multi-select
+          this.ctx.lineWidth = 3;
+          this.ctx.beginPath();
+          this.ctx.arc(node.x, node.y, 35, 0, Math.PI * 2);
+          this.ctx.stroke();
+        }
+        // Draw selection indicator for single selected node
+        else if (this.selectedNode === node) {
+          this.ctx.strokeStyle = '#3b82f6'; // Blue for single select
           this.ctx.lineWidth = 3;
           this.ctx.beginPath();
           this.ctx.arc(node.x, node.y, 35, 0, Math.PI * 2);
@@ -5824,6 +5949,10 @@ const Modal = {
           <input type="hidden" id="charThumbnail">
         </div>
         <div class="form-group">
+          <label class="form-label">Age</label>
+          <input type="text" class="form-input" id="charAge" placeholder="Character age">
+        </div>
+        <div class="form-group">
           <label class="form-label">Description</label>
           <textarea class="form-textarea" id="charDescription" placeholder="Physical description and key traits..."></textarea>
         </div>
@@ -5853,9 +5982,11 @@ const Modal = {
       name: document.getElementById('charName').value,
       role: document.getElementById('charRole').value,
       thumbnail: document.getElementById('charThumbnail').value || '',
+      age: document.getElementById('charAge').value || '',
       description: document.getElementById('charDescription').value,
       background: document.getElementById('charBackground').value,
       personality: document.getElementById('charPersonality').value,
+      goals: '',
       relationships: document.getElementById('charRelationships').value
     };
     
@@ -6210,7 +6341,7 @@ const Modal = {
         </div>
         <div class="form-group">
           <label class="form-label">Age</label>
-          <input type="text" class="form-input" id="charAge" value="${character.age}">
+          <input type="text" class="form-input" id="charAge" value="${character.age || ''}">
         </div>
         <div class="form-group">
           <label class="form-label">Description</label>
@@ -6222,7 +6353,7 @@ const Modal = {
         </div>
         <div class="form-group">
           <label class="form-label">Goals</label>
-          <textarea class="form-textarea" id="charGoals">${character.goals}</textarea>
+          <textarea class="form-textarea" id="charGoals">${character.goals || ''}</textarea>
         </div>
         <div class="form-group">
           <label class="form-label">Background</label>
