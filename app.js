@@ -515,12 +515,71 @@ const AppState = {
       worlds: this.worlds,
       lastSaved: new Date().toISOString()
     };
-    localStorage.setItem('worldforge_mono_data', JSON.stringify(data));
-    this.showSaveIndicator();
+    
+    try {
+      const jsonData = JSON.stringify(data);
+      const dataSize = new Blob([jsonData]).size;
+      const dataSizeMB = (dataSize / (1024 * 1024)).toFixed(2);
+      
+      // Check if data is approaching localStorage limit (5MB typical)
+      if (dataSize > 4.5 * 1024 * 1024) {
+        console.warn(`Data size is ${dataSizeMB}MB - approaching localStorage limit`);
+        alert(`Warning: Your world data is ${dataSizeMB}MB. Consider exporting your world as backup. Large custom assets may cause save failures.`);
+      }
+      
+      localStorage.setItem('worldforge_mono_data', jsonData);
+      this.showSaveIndicator();
+      return true;
+    } catch (e) {
+      console.error('Save failed:', e);
+      
+      if (e.name === 'QuotaExceededError' || e.code === 22) {
+        // localStorage quota exceeded
+        const dataSize = new Blob([JSON.stringify(data)]).size;
+        const dataSizeMB = (dataSize / (1024 * 1024)).toFixed(2);
+        
+        alert(`❌ SAVE FAILED: Storage quota exceeded!\n\n` +
+              `Your world data (${dataSizeMB}MB) is too large for browser storage.\n\n` +
+              `Solutions:\n` +
+              `1. Remove some custom assets from the map\n` +
+              `2. Use smaller image files (compress images before uploading)\n` +
+              `3. Export your world and start fresh\n\n` +
+              `Your changes were NOT saved.`);
+      } else {
+        alert(`❌ SAVE FAILED: ${e.message}\n\nYour changes were NOT saved. Please try again or contact support.`);
+      }
+      
+      return false;
+    }
   },
   
   setupAutoSave() {
     setInterval(() => this.save(), 30000);
+  },
+  
+  getStorageInfo() {
+    try {
+      const data = {
+        worlds: this.worlds,
+        lastSaved: new Date().toISOString()
+      };
+      const jsonData = JSON.stringify(data);
+      const dataSize = new Blob([jsonData]).size;
+      const dataSizeMB = (dataSize / (1024 * 1024)).toFixed(2);
+      const dataSizeKB = (dataSize / 1024).toFixed(2);
+      const percentUsed = ((dataSize / (5 * 1024 * 1024)) * 100).toFixed(1);
+      
+      return {
+        sizeBytes: dataSize,
+        sizeMB: dataSizeMB,
+        sizeKB: dataSizeKB,
+        percentUsed: percentUsed,
+        isNearLimit: dataSize > 4 * 1024 * 1024
+      };
+    } catch (e) {
+      console.error('Error getting storage info:', e);
+      return null;
+    }
   },
   
   setupKeyboardShortcuts() {
@@ -1677,8 +1736,8 @@ const Views = {
           <div style="margin-bottom: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-color);">
             <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--text-primary); margin: 0 0 0.5rem 0;">Controls:</h4>
             <div style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
-              <div style="margin-bottom: 0.25rem;"><strong>Icons:</strong> Click to select • Double-click to edit • Ctrl/Cmd+Click for multi-select • Delete to remove</div>
-              <div style="margin-bottom: 0.25rem;"><strong>Assets:</strong> Click to select • Drag to move • +/- to resize • R to rotate • Backspace to delete</div>
+              <div style="margin-bottom: 0.25rem;"><strong>Icons:</strong> Click to select • Double-click to edit • Ctrl/Cmd+Click for multi-select • Shift+D to duplicate • Delete to remove</div>
+              <div style="margin-bottom: 0.25rem;"><strong>Assets:</strong> Click to select • Drag to move • +/- to resize • R to rotate • Shift+D to duplicate • Backspace to delete</div>
               <div><strong>Labels:</strong> Click to select • Drag to move • Backspace to delete</div>
             </div>
           </div>
@@ -3281,6 +3340,8 @@ const MapBuilder = {
       if (!AppState.currentWorld.placedAssets) {
         AppState.currentWorld.placedAssets = [];
       }
+      // CRITICAL FIX: Load placedAssets from AppState
+      this.placedAssets = AppState.currentWorld.placedAssets || [];
       this.textLabels = AppState.currentWorld.mapLabels || [];
     }
     
@@ -3413,6 +3474,47 @@ const MapBuilder = {
     
     // Keyboard controls for selected asset or node
     document.addEventListener('keydown', (e) => {
+      // Handle Shift+D for duplication
+      if (e.shiftKey && (e.key === 'D' || e.key === 'd')) {
+        // Duplicate selected node (icon)
+        if (this.selectedNode) {
+          const duplicatedNode = {
+            id: 'node-' + Date.now(),
+            x: this.selectedNode.x + 50,
+            y: this.selectedNode.y + 50,
+            icon: this.selectedNode.icon,
+            label: this.selectedNode.label + ' (Copy)',
+            labelColor: this.selectedNode.labelColor || '#000000'
+          };
+          AppState.currentWorld.mapNodes.push(duplicatedNode);
+          this.selectedNode = duplicatedNode;
+          this.render();
+          AppState.save();
+          e.preventDefault();
+          return;
+        }
+        // Duplicate selected asset
+        if (this.selectedPlacedAsset) {
+          const duplicatedAsset = {
+            id: 'asset-' + Date.now(),
+            x: this.selectedPlacedAsset.x + 50,
+            y: this.selectedPlacedAsset.y + 50,
+            width: this.selectedPlacedAsset.width,
+            height: this.selectedPlacedAsset.height,
+            rotation: this.selectedPlacedAsset.rotation || 0,
+            data: this.selectedPlacedAsset.data,
+            name: this.selectedPlacedAsset.name
+          };
+          this.placedAssets.push(duplicatedAsset);
+          AppState.currentWorld.placedAssets.push(duplicatedAsset);
+          this.selectedPlacedAsset = duplicatedAsset;
+          this.render();
+          AppState.save();
+          e.preventDefault();
+          return;
+        }
+      }
+      
       // Handle Delete/Backspace for both assets and nodes
       if (e.key === 'Delete' || e.key === 'Backspace') {
         // Delete multiple selected nodes
@@ -3842,16 +3944,21 @@ const MapBuilder = {
         </div>
         <div class="form-group">
           <label class="form-label">Select Icon</label>
-          <select class="form-input" id="selectedIcon" style="font-size: 1.5rem; padding: 0.75rem;">
-            ${this.emojiData.smileys.map(e => `<option value="${e}">${e}</option>`).join('')}
-            ${this.emojiData.animals.map(e => `<option value="${e}">${e}</option>`).join('')}
-            ${this.emojiData.food.map(e => `<option value="${e}">${e}</option>`).join('')}
-            ${this.emojiData.travel.map(e => `<option value="${e}">${e}</option>`).join('')}
-            ${this.emojiData.activities.map(e => `<option value="${e}">${e}</option>`).join('')}
-            ${this.emojiData.objects.map(e => `<option value="${e}">${e}</option>`).join('')}
-            ${this.emojiData.symbols.map(e => `<option value="${e}">${e}</option>`).join('')}
-            ${this.emojiData.flags.map(e => `<option value="${e}">${e}</option>`).join('')}
-          </select>
+          <div style="margin-bottom: 0.5rem; padding: 0.75rem; background: var(--bg-secondary); border-radius: 0.375rem; border: 1px solid var(--border-color);">
+            <p style="margin: 0; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5;">
+              <strong style="font-size: 1.125rem; color: var(--text-primary);">💡 Tip: Use your system emoji picker to select an icon:</strong><br>
+              • <strong>Windows:</strong> Press <code style="background: var(--gray-200); padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-family: monospace;">Win + .</code> or <code style="background: var(--gray-200); padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-family: monospace;">Win + ;</code><br>
+              • <strong>Mac:</strong> Press <code style="background: var(--gray-200); padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-family: monospace;">Cmd + Ctrl + Space</code><br>
+              • <strong>Linux:</strong> Press <code style="background: var(--gray-200); padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-family: monospace;">Ctrl + .</code> or <code style="background: var(--gray-200); padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-family: monospace;">Ctrl + ;</code>
+            </p>
+          </div>
+          <input type="text" class="form-input" id="selectedIcon" placeholder="Click here and use emoji picker" maxlength="2" style="font-size: 2rem; text-align: center; padding: 1rem;">
+          <style>
+            #selectedIcon::placeholder {
+              font-size: 0.875rem;
+              color: var(--gray-400);
+            }
+          </style>
         </div>
         <div class="form-group">
           <label class="form-label">Label Text Color</label>
@@ -4648,8 +4755,11 @@ const MapBuilder = {
     }
     AppState.currentWorld.placedAssets = this.placedAssets;
     
-    AppState.save();
-    alert('Map saved successfully to current world!');
+    const saveSuccess = AppState.save();
+    if (saveSuccess) {
+      alert('✅ Map saved successfully to current world!');
+    }
+    // Error message already shown by AppState.save() if it failed
   },
   
   async exportSavedMapAsPNG() {
