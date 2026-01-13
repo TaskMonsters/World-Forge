@@ -1,0 +1,851 @@
+======================================================================
+WorldForge Asset Compression Tool
+======================================================================
+
+Found 246 images to compress
+
+[1/246] Compressing: scifi/trees/palm_tree.png
+  0.35MB → 0.35MB (0.0% reduction)
+
+[2/246] Compressing: scifi/trees/pine_tree.png
+  0.30MB → 0.30MB (0.0% reduction)
+
+[3/246] Compressing: scifi/trees/oak_tree.png
+  0.32MB → 0.32MB (0.0% reduction)
+
+[4/246] Compressing: scifi/trees/willow_tree.png
+  0.39MB → 0.39MB (0.0% reduction)
+
+[5/246] Compressing: scifi/trees/cherry_blossom.png
+  0.20MB → 0.20MB (0.0% reduction)
+
+[6/246] Compressing: scifi/trees/dead_tree.png
+  0.15MB → 0.15MB (0.0% reduction)
+
+[7/246] Compressing: scifi/trees/large_ancient_tree.png
+  0.19MB → 0.19MB (0.0% reduction)
+
+[8/246] Compressing: scifi/trees/small_sapling.png
+  0.01MB → 0.01MB (0.0% reduction)
+
+[9/246] Compressing: scifi/buildings_residential/villa.png
+  0.22MB → 0.22MB (0.0% reduction)
+
+[10/246] Compressing: scifi/buildings_residential/apartment_building.png
+  0.21MB → 0.21MB (0.0% reduction)
+
+[11/246] Compressing: scifi/buildings_residential/cottage.png
+  0.24MB → 0.24MB (0.0% reduction)
+
+[12/246] Compressing: scifi/buildings_residential/medium_house.png
+  0.23MB → 0.23MB (0.0% reduction)
+
+[13/246] Compressing: scifi/buildings_residential/small_house.png
+  0.25MB → 0.25MB (0.0% reduction)
+
+[14/246] Compressing: scifi/buildings_residential/large_house.png
+  0.33MB → 0.33MB (0.0% reduction)
+
+[15/246] Compressing: scifi/special/landing_pad.png
+  0.32MB → 0.32MB (0.0% reduction)
+
+[16/246] Compressing: scifi/special/fountain.png
+  0.30MB → 0.30MB (0.0% reduction)
+
+[17/246] Compressing: scifi/special/energy_generator.png
+  0.33MB → 0.33MB (0.0% reduction)
+
+[18/246] Compressing: scifi/special/water_tower.png
+  0.34MB → 0.34MB (0.0% reduction)
+
+[19/246] Compressing: scifi/buildings_commercial/office_building.png
+  0.24MB → 0.24MB (0.0% reduction)
+
+[20/246] Compressing: scifi/buildings_commercial/charging_station.png
+  0.19MB → 0.19MB (0.0% reduction)
+
+[21/246] Compressing: scifi/buildings_commercial/restaurant.png
+  0.29MB → 0.29MB (0.0% reduction)
+
+[22/246] Compressing: scifi/buildings_commercial/mall.png
+  0.30MB → 0.30MB (0.0% reduction)
+
+[23/246] Compressing: scifi/buildings_commercial/warehouse.png
+  0.27MB → 0.27MB (0.0% reduction)
+
+[24/246] Compressing: scifi/buildings_commercial/shop_store.png
+  0.13MB → 0.13MB (0.0% reduction)
+
+[25/246] Compressing: scifi/buildings_public/hospital.png
+  0.28MB → 0.28MB (0.0% reduction)
+
+[26/246] Compressing: scifi/buildings_public/fire_station.png
+  0.28MB → 0.28MB (0.0% reduction)
+
+[27/246] Compressing: scifi/buildings_public/school.png
+  0.30MB → 0.30MB (0.0% reduction)
+
+[28/246] Compressing: scifi/buildings_public/church.png
+  0.30MB → 0.30MB (0.0% reduction)
+
+[29/246] Compressing: scifi/buildings_public/library.png
+  0.15MB → 0.15MB (0.0% reduction)
+
+[30/246] Compressing: scifi/buildings_public/police_station.png
+  0.17MB → 0.17MB (0.0% reduction)
+
+[31/246] Compressing: scifi/buildings_public/stadium.png
+  0.30MB → 0.30MB (0.0% reduction)
+
+[32/246] Compressing: scifi/buildings_public/town_hall.png
+  0.20MB → 0.20MB (0.0% reduction)
+
+[33/246] Compressing: scifi/greenery/bush_large.png
+  0.31MB → 0.31MB (0.0% reduction)
+
+[34/246] Compressing: scifi/greenery/flower_bed.png
+  0.22MB → 0.22MB (0.0% reduction)
+
+[35/246] Compressing: scifi/greenery/park_bench.png
+  0.09MB → 0.09MB (0.0% reduction)
+
+[36/246] Compressing: scifi/greenery/bush_small.png
+  0.25MB → 0.25MB (0.0% reduction)
+
+[37/246] Compressing: scifi/greenery/lamp_post.png
+  0.26MB → 0.26MB (0.0% reduction)
+
+[38/246] Compressing: scifi/greenery/rock_large.png
+  0.29MB → 0.29MB (0.0% reduction)
+
+[39/246] Compressing: scifi/greenery/pond.png
+  0.37MB → 0.37MB (0.0% reduction)
+
+[40/246] Compressing: scifi/greenery/grass_patch_large.png
+  0.13MB → 0.13MB (0.0% reduction)
+
+[41/246] Compressing: scifi/greenery/grass_patch_small.png
+  0.04MB → 0.04MB (0.0% reduction)
+
+[42/246] Compressing: scifi/greenery/rock_small.png
+  0.19MB → 0.19MB (0.0% reduction)
+
+[43/246] Compressing: scifi/roads/straight_road_horizontal.png
+  0.13MB → 0.13MB (0.0% reduction)
+
+[44/246] Compressing: scifi/roads/straight_road_vertical.png
+  0.13MB → 0.13MB (0.0% reduction)
+
+[45/246] Compressing: scifi/roads/road_corner_90.png
+  0.17MB → 0.17MB (0.0% reduction)
+
+[46/246] Compressing: scifi/roads/cross_intersection.png
+  0.24MB → 0.24MB (0.0% reduction)
+
+[47/246] Compressing: scifi/roads/t_junction.png
+  0.21MB → 0.21MB (0.0% reduction)
+
+[48/246] Compressing: scifi/roads/curved_road.png
+  0.24MB → 0.24MB (0.0% reduction)
+
+[49/246] Compressing: scifi/roads/roundabout.png
+  0.35MB → 0.35MB (0.0% reduction)
+
+[50/246] Compressing: scifi/roads/bridge_segment.png
+  0.18MB → 0.18MB (0.0% reduction)
+
+[51/246] Compressing: backgrounds/winter_snow.png
+  Resized from 2048x2048 to 1024x1024
+  5.55MB → 1.34MB (75.9% reduction)
+
+[52/246] Compressing: backgrounds/forest_ground.png
+  Resized from 2048x2048 to 1024x1024
+  8.36MB → 2.39MB (71.4% reduction)
+
+[53/246] Compressing: backgrounds/desert_sand.png
+  Resized from 2048x2048 to 1024x1024
+  7.61MB → 1.91MB (74.8% reduction)
+
+[54/246] Compressing: backgrounds/volcanic_lava.png
+  Resized from 2048x2048 to 1024x1024
+  7.60MB → 2.10MB (72.4% reduction)
+
+[55/246] Compressing: backgrounds/grassland_plains.png
+  Resized from 1536x1024 to 1024x682
+  3.12MB → 1.41MB (54.7% reduction)
+
+[56/246] Compressing: backgrounds/ocean_water.png
+  Resized from 2048x2048 to 1024x1024
+  5.52MB → 1.37MB (75.1% reduction)
+
+[57/246] Compressing: backgrounds/grassland_green.png
+  Resized from 2048x2048 to 1024x1024
+  9.67MB → 2.58MB (73.3% reduction)
+
+[58/246] Compressing: backgrounds/mystical_purple.png
+  Resized from 2048x2048 to 1024x1024
+  6.92MB → 1.81MB (73.8% reduction)
+
+[59/246] Compressing: backgrounds/mountain_stone.png
+  Resized from 2048x2048 to 1024x1024
+  7.74MB → 2.20MB (71.5% reduction)
+
+[60/246] Compressing: backgrounds/forest_jungle_green.png
+  Resized from 1536x1024 to 1024x682
+  3.49MB → 1.56MB (55.4% reduction)
+
+[61/246] Compressing: normal/trees/palm_tree.png
+  0.00MB → 0.00MB (0.0% reduction)
+
+[62/246] Compressing: normal/trees/pine_tree.png
+  0.22MB → 0.22MB (0.0% reduction)
+
+[63/246] Compressing: normal/trees/oak_tree.png
+  0.05MB → 0.05MB (0.0% reduction)
+
+[64/246] Compressing: normal/trees/willow_tree.png
+  0.31MB → 0.31MB (0.0% reduction)
+
+[65/246] Compressing: normal/trees/cherry_blossom.png
+  0.20MB → 0.20MB (0.0% reduction)
+
+[66/246] Compressing: normal/trees/dead_tree.png
+  0.08MB → 0.08MB (0.0% reduction)
+
+[67/246] Compressing: normal/trees/large_ancient_tree.png
+  0.20MB → 0.20MB (0.0% reduction)
+
+[68/246] Compressing: normal/trees/small_sapling.png
+  0.00MB → 0.00MB (0.0% reduction)
+
+[69/246] Compressing: normal/buildings_residential/villa.png
+  0.29MB → 0.29MB (0.0% reduction)
+
+[70/246] Compressing: normal/buildings_residential/apartment_building.png
+  0.16MB → 0.16MB (0.0% reduction)
+
+[71/246] Compressing: normal/buildings_residential/cottage.png
+  0.15MB → 0.15MB (0.0% reduction)
+
+[72/246] Compressing: normal/buildings_residential/medium_house.png
+  0.21MB → 0.21MB (0.0% reduction)
+
+[73/246] Compressing: normal/buildings_residential/small_house.png
+  0.11MB → 0.11MB (0.0% reduction)
+
+[74/246] Compressing: normal/buildings_residential/large_house.png
+  0.22MB → 0.22MB (0.0% reduction)
+
+[75/246] Compressing: normal/special/fountain.png
+  0.34MB → 0.34MB (0.0% reduction)
+
+[76/246] Compressing: normal/special/water_tower.png
+  0.13MB → 0.13MB (0.0% reduction)
+
+[77/246] Compressing: normal/special/parking_lot.png
+  0.17MB → 0.17MB (0.0% reduction)
+
+[78/246] Compressing: normal/special/wind_turbine.png
+  0.06MB → 0.06MB (0.0% reduction)
+
+[79/246] Compressing: normal/buildings_commercial/office_building.png
+  0.18MB → 0.18MB (0.0% reduction)
+
+[80/246] Compressing: normal/buildings_commercial/gas_station.png
+  0.22MB → 0.22MB (0.0% reduction)
+
+[81/246] Compressing: normal/buildings_commercial/restaurant.png
+  0.14MB → 0.14MB (0.0% reduction)
+
+[82/246] Compressing: normal/buildings_commercial/mall.png
+  0.29MB → 0.29MB (0.0% reduction)
+
+[83/246] Compressing: normal/buildings_commercial/warehouse.png
+  0.13MB → 0.13MB (0.0% reduction)
+
+[84/246] Compressing: normal/buildings_commercial/shop_store.png
+  0.07MB → 0.07MB (0.0% reduction)
+
+[85/246] Compressing: normal/buildings_public/hospital.png
+  0.14MB → 0.14MB (0.0% reduction)
+
+[86/246] Compressing: normal/buildings_public/fire_station.png
+  0.08MB → 0.08MB (0.0% reduction)
+
+[87/246] Compressing: normal/buildings_public/school.png
+  0.14MB → 0.14MB (0.0% reduction)
+
+[88/246] Compressing: normal/buildings_public/church.png
+  0.15MB → 0.15MB (0.0% reduction)
+
+[89/246] Compressing: normal/buildings_public/library.png
+  0.15MB → 0.15MB (0.0% reduction)
+
+[90/246] Compressing: normal/buildings_public/police_station.png
+  0.21MB → 0.21MB (0.0% reduction)
+
+[91/246] Compressing: normal/buildings_public/stadium.png
+  0.22MB → 0.22MB (0.0% reduction)
+
+[92/246] Compressing: normal/buildings_public/town_hall.png
+  0.24MB → 0.24MB (0.0% reduction)
+
+[93/246] Compressing: normal/greenery/bush_large.png
+  0.00MB → 0.00MB (0.0% reduction)
+
+[94/246] Compressing: normal/greenery/flower_bed.png
+  0.31MB → 0.31MB (0.0% reduction)
+
+[95/246] Compressing: normal/greenery/park_bench.png
+  0.09MB → 0.09MB (0.0% reduction)
+
+[96/246] Compressing: normal/greenery/bush_small.png
+  0.00MB → 0.00MB (0.0% reduction)
+
+[97/246] Compressing: normal/greenery/lamp_post.png
+  0.12MB → 0.12MB (0.0% reduction)
+
+[98/246] Compressing: normal/greenery/rock_large.png
+  0.21MB → 0.21MB (0.0% reduction)
+
+[99/246] Compressing: normal/greenery/pond.png
+  0.12MB → 0.12MB (0.0% reduction)
+
+[100/246] Compressing: normal/greenery/grass_patch_large.png
+  0.00MB → 0.00MB (0.0% reduction)
+
+[101/246] Compressing: normal/greenery/grass_patch_small.png
+  0.00MB → 0.00MB (0.0% reduction)
+
+[102/246] Compressing: normal/greenery/rock_small.png
+  0.44MB → 0.44MB (0.0% reduction)
+
+[103/246] Compressing: normal/roads/straight_road_horizontal.png
+  0.08MB → 0.08MB (0.0% reduction)
+
+[104/246] Compressing: normal/roads/straight_road_vertical.png
+  0.10MB → 0.10MB (0.0% reduction)
+
+[105/246] Compressing: normal/roads/road_corner_90.png
+  0.11MB → 0.11MB (0.0% reduction)
+
+[106/246] Compressing: normal/roads/cross_intersection.png
+  0.14MB → 0.14MB (0.0% reduction)
+
+[107/246] Compressing: normal/roads/t_junction.png
+  0.16MB → 0.16MB (0.0% reduction)
+
+[108/246] Compressing: normal/roads/curved_road.png
+  0.14MB → 0.14MB (0.0% reduction)
+
+[109/246] Compressing: normal/roads/roundabout.png
+  0.22MB → 0.22MB (0.0% reduction)
+
+[110/246] Compressing: normal/roads/bridge_segment.png
+  0.11MB → 0.11MB (0.0% reduction)
+
+[111/246] Compressing: modern/modern_004_highway_section.png
+  Resized from 1536x2752 to 571x1024
+  6.77MB → 0.64MB (90.6% reduction)
+
+[112/246] Compressing: modern/modern_016_barn.png
+  Resized from 2048x2048 to 1024x1024
+  6.32MB → 0.81MB (87.2% reduction)
+
+[113/246] Compressing: modern/modern_009_convenience_store.png
+  Resized from 2048x2048 to 1024x1024
+  5.28MB → 0.64MB (87.8% reduction)
+
+[114/246] Compressing: modern/modern_020_corn_field.png
+  Resized from 2752x1536 to 1024x571
+  6.97MB → 0.01MB (99.8% reduction)
+
+[115/246] Compressing: modern/modern_027_hill.png
+  Resized from 2048x2048 to 1024x1024
+  6.03MB → 0.68MB (88.7% reduction)
+
+[116/246] Compressing: modern/modern_006_office_building.png
+  Resized from 1536x2752 to 571x1024
+  6.04MB → 0.64MB (89.4% reduction)
+
+[117/246] Compressing: modern/modern_022_gravel_road.png
+  Resized from 1536x2752 to 571x1024
+  8.94MB → 1.07MB (88.0% reduction)
+
+[118/246] Compressing: modern/modern_001_straight_road.png
+  Resized from 1536x2752 to 571x1024
+  7.78MB → 0.63MB (91.9% reduction)
+
+[119/246] Compressing: modern/modern_002_curved_road.png
+  Resized from 2048x2048 to 1024x1024
+  7.19MB → 1.08MB (85.0% reduction)
+
+[120/246] Compressing: modern/modern_008_gas_station.png
+  Resized from 2048x2048 to 1024x1024
+  5.46MB → 0.63MB (88.4% reduction)
+
+[121/246] Compressing: modern/modern_011_apartment_complex.png
+  Resized from 2048x2048 to 1024x1024
+  6.28MB → 1.07MB (83.0% reduction)
+
+[122/246] Compressing: modern/modern_015_playground.png
+  Resized from 2048x2048 to 1024x1024
+  5.51MB → 0.48MB (91.3% reduction)
+
+[123/246] Compressing: modern/modern_018_farmhouse.png
+  Resized from 2048x2048 to 1024x1024
+  6.06MB → 0.63MB (89.6% reduction)
+
+[124/246] Compressing: modern/modern_013_townhouse_row.png
+  Resized from 2752x1536 to 1024x571
+  6.33MB → 0.54MB (91.4% reduction)
+
+[125/246] Compressing: modern/modern_005_parking_lot.png
+  Resized from 2752x1536 to 1024x571
+  7.08MB → 0.61MB (91.4% reduction)
+
+[126/246] Compressing: modern/modern_017_silo.png
+  Resized from 1536x2752 to 571x1024
+  6.05MB → 0.73MB (88.0% reduction)
+
+[127/246] Compressing: modern/modern_026_meadow.png
+  Resized from 2752x1536 to 1024x571
+  6.46MB → 0.55MB (91.4% reduction)
+
+[128/246] Compressing: modern/modern_028_country_church.png
+  Resized from 1536x2752 to 571x1024
+  5.26MB → 0.21MB (96.0% reduction)
+
+[129/246] Compressing: modern/modern_023_wooden_fence.png
+  Resized from 2752x1536 to 1024x571
+  6.91MB → 0.24MB (96.5% reduction)
+
+[130/246] Compressing: modern/modern_019_wheat_field.png
+  Resized from 2752x1536 to 1024x571
+  6.86MB → 0.50MB (92.8% reduction)
+
+[131/246] Compressing: modern/modern_003_intersection.png
+  Resized from 2048x2048 to 1024x1024
+  6.32MB → 1.07MB (83.0% reduction)
+
+[132/246] Compressing: modern/modern_021_dirt_road.png
+  Resized from 1536x2752 to 571x1024
+  6.46MB → 0.62MB (90.4% reduction)
+
+[133/246] Compressing: modern/modern_007_shopping_mall.png
+  Resized from 2752x1536 to 1024x571
+  5.83MB → 0.45MB (92.3% reduction)
+
+[134/246] Compressing: modern/modern_024_pond.png
+  Resized from 2048x2048 to 1024x1024
+  5.01MB → 0.39MB (92.2% reduction)
+
+[135/246] Compressing: modern/modern_014_city_park.png
+  Resized from 2048x2048 to 1024x1024
+  6.47MB → 0.17MB (97.3% reduction)
+
+[136/246] Compressing: modern/modern_030_windmill.png
+  Resized from 1536x2752 to 571x1024
+  5.79MB → 0.49MB (91.5% reduction)
+
+[137/246] Compressing: modern/modern_025_forest_patch.png
+  Resized from 2048x2048 to 1024x1024
+  6.34MB → 0.49MB (92.3% reduction)
+
+[138/246] Compressing: modern/modern_010_restaurant.png
+  Resized from 2048x2048 to 1024x1024
+  6.08MB → 0.85MB (85.9% reduction)
+
+[139/246] Compressing: modern/modern_029_general_store.png
+  Resized from 2048x2048 to 1024x1024
+  6.81MB → 1.12MB (83.6% reduction)
+
+[140/246] Compressing: modern/modern_012_suburban_house.png
+  Resized from 2048x2048 to 1024x1024
+  6.03MB → 0.83MB (86.3% reduction)
+
+[141/246] Compressing: fantasy_transparent/fantasy_012_wooden_watchtower.png
+  0.07MB → 0.07MB (0.0% reduction)
+
+[142/246] Compressing: fantasy_transparent/fantasy_018_ancient_stone_ruins.png
+  Resized from 1560x1560 to 1024x1024
+  2.08MB → 1.20MB (42.5% reduction)
+
+[143/246] Compressing: fantasy_transparent/8_CfpDz1XQajZMBiTwY3vkNu_1766540159333_na1fn_L2hvbWUvdWJ1bnR1L2d1YXJkX2JhcnJhY2tz.png
+  Resized from 1560x1560 to 1024x1024
+  2.04MB → 1.16MB (43.3% reduction)
+
+[144/246] Compressing: fantasy_transparent/fantasy_024_cobblestone_road_corner.png
+  Resized from 1560x1560 to 1024x1024
+  2.47MB → 1.59MB (35.7% reduction)
+
+[145/246] Compressing: fantasy_transparent/fantasy_029_wooden_fence_section.png
+  Resized from 1560x1560 to 1024x1024
+  0.92MB → 0.57MB (37.4% reduction)
+
+[146/246] Compressing: fantasy_transparent/22_k23VWiAHYALm8xgr01Pwns_1766540216719_na1fn_L2hvbWUvdWJ1bnR1L2NvYmJsZXN0b25lX3JvYWRfc3RyYWlnaHQ.png
+  Resized from 1560x1560 to 1024x1024
+  1.47MB → 1.15MB (21.6% reduction)
+
+[147/246] Compressing: fantasy_transparent/fantasy_001_small_wooden_cottage.png
+  Resized from 1560x1560 to 1024x1024
+  1.23MB → 0.74MB (40.1% reduction)
+
+[148/246] Compressing: fantasy_transparent/13_eiE4ZVZouQaaIqg8DHvUuv_1766540159907_na1fn_L2hvbWUvdWJ1bnR1L3BpbmVfdHJlZV9jbHVzdGVy.png
+  Resized from 1560x1560 to 1024x1024
+  1.75MB → 0.94MB (46.1% reduction)
+
+[149/246] Compressing: fantasy_transparent/fantasy_006_stone_church_with_spire.png
+  Resized from 1560x1560 to 1024x1024
+  2.18MB → 1.29MB (40.8% reduction)
+
+[150/246] Compressing: fantasy_transparent/12_X8lQXQIpkzXK9UO0pWZhir_1766540194526_na1fn_L2hvbWUvdWJ1bnR1L2xhcmdlX29ha190cmVlX3Yy.png
+  Resized from 1560x1560 to 1024x1024
+  1.80MB → 0.96MB (46.5% reduction)
+
+[151/246] Compressing: fantasy_transparent/fantasy_013_large_oak_tree.png
+  Resized from 1560x1560 to 1024x1024
+  1.80MB → 0.96MB (46.5% reduction)
+
+[152/246] Compressing: fantasy_transparent/fantasy_020_flower_garden_patch.png
+  Resized from 1560x1560 to 1024x1024
+  3.25MB → 1.62MB (50.0% reduction)
+
+[153/246] Compressing: fantasy_transparent/23_T4WLdOUejOJB7jKin8TRa1_1766540229376_na1fn_L2hvbWUvdWJ1bnR1L2NvYmJsZXN0b25lX3JvYWRfY29ybmVy.png
+  Resized from 1560x1560 to 1024x1024
+  2.47MB → 1.59MB (35.7% reduction)
+
+[154/246] Compressing: fantasy_transparent/fantasy_017_magical_glowing_mushroom.png
+  Resized from 1560x1560 to 1024x1024
+  1.58MB → 0.89MB (44.0% reduction)
+
+[155/246] Compressing: fantasy_transparent/29_B2H8jwbKtiFI3MDnWpVaiz_1766540269294_na1fn_L2hvbWUvdWJ1bnR1L3N0b25lX3dhbGxfc2VjdGlvbl92Mg.png
+  Resized from 1560x1560 to 1024x1024
+  1.12MB → 1.35MB (-21.1% reduction)
+
+[156/246] Compressing: fantasy_transparent/fantasy_019_waterfall_tile.png
+  Resized from 1560x1560 to 1024x1024
+  2.00MB → 1.19MB (40.6% reduction)
+
+[157/246] Compressing: fantasy_transparent/19_Wnx21XEymUeopOkwmmp4hj_1766540159904_na1fn_L2hvbWUvdWJ1bnR1L2Zsb3dlcl9nYXJkZW5fcGF0Y2g.png
+  Resized from 1560x1560 to 1024x1024
+  3.25MB → 1.62MB (50.0% reduction)
+
+[158/246] Compressing: fantasy_transparent/20_SXKKYgfy6cWymxsX1X0kF4_1766540207525_na1fn_L2hvbWUvdWJ1bnR1L3Rob3JueV9idXNo.png
+  Resized from 1560x1560 to 1024x1024
+  1.92MB → 0.90MB (53.3% reduction)
+
+[159/246] Compressing: fantasy_transparent/fantasy_011_stone_well_house.png
+  Resized from 1560x1560 to 1024x1024
+  3.04MB → 1.51MB (50.4% reduction)
+
+[160/246] Compressing: fantasy_transparent/fantasy_004_wizard_tower.png
+  Resized from 1560x1560 to 1024x1024
+  1.37MB → 1.17MB (14.8% reduction)
+
+[161/246] Compressing: fantasy_transparent/0_d2Caypc8lkF2AfsRfY56mR_1766540156760_na1fn_L2hvbWUvdWJ1bnR1L3dvb2Rlbl9jb3R0YWdl.png
+  Resized from 1560x1560 to 1024x1024
+  1.23MB → 0.74MB (40.1% reduction)
+
+[162/246] Compressing: fantasy_transparent/fantasy_031_torch_post_lit.png
+  Resized from 1560x1560 to 1024x1024
+  0.87MB → 0.59MB (32.3% reduction)
+
+[163/246] Compressing: fantasy_transparent/34_q8AmAi2Wbm8gDZ2PzfjrAZ_1766540405875_na1fn_L2hvbWUvdWJ1bnR1L3RyZWFzdXJlX2NoZXN0X2F0dGVtcHQy.png
+  Resized from 1560x1560 to 1024x1024
+  1.69MB → 1.02MB (39.4% reduction)
+
+[164/246] Compressing: fantasy_transparent/39_QamSWOdgDEy5tbX2hwk2bn_1766540243810_na1fn_L2hvbWUvdWJ1bnR1L2Jhbm5lcl9mbGFnX3BvbGU.png
+  Resized from 1560x1560 to 1024x1024
+  0.89MB → 0.61MB (32.0% reduction)
+
+[165/246] Compressing: fantasy_transparent/fantasy_037_hay_bales.png
+  Resized from 1560x1560 to 1024x1024
+  1.75MB → 0.96MB (45.2% reduction)
+
+[166/246] Compressing: fantasy_transparent/fantasy_007_thatched_roof_farmhouse.png
+  Resized from 1560x1560 to 1024x1024
+  1.26MB → 0.71MB (43.5% reduction)
+
+[167/246] Compressing: fantasy_transparent/fantasy_022_mystical_portal_stone.png
+  Resized from 1560x1560 to 1024x1024
+  1.99MB → 1.11MB (44.3% reduction)
+
+[168/246] Compressing: fantasy_transparent/fantasy_039_wooden_cart.png
+  Resized from 1560x1560 to 1024x1024
+  1.91MB → 1.08MB (43.3% reduction)
+
+[169/246] Compressing: fantasy_transparent/fantasy_035_treasure_chest.png
+  Resized from 1560x1560 to 1024x1024
+  1.69MB → 1.02MB (39.4% reduction)
+
+[170/246] Compressing: fantasy_transparent/37_hQPovrDwten7atEr1qWxF9_1766540250618_na1fn_L2hvbWUvdWJ1bnR1L3N0b25lX2ZvdW50YWlu.png
+  Resized from 1560x1560 to 1024x1024
+  1.85MB → 1.13MB (39.1% reduction)
+
+[171/246] Compressing: fantasy_transparent/18_CusOetSqsgiINRnJpReOf5_1766540162471_na1fn_L2hvbWUvdWJ1bnR1L3dhdGVyZmFsbF90aWxl.png
+  Resized from 1560x1560 to 1024x1024
+  2.00MB → 1.19MB (40.6% reduction)
+
+[172/246] Compressing: fantasy_transparent/25_RmG8eEMP7cJIYDKUt7gut1_1766540217501_na1fn_L2hvbWUvdWJ1bnR1L2RpcnRfcGF0aF9jcm9zc2luZw.png
+  Resized from 1560x1560 to 1024x1024
+  1.58MB → 0.83MB (47.9% reduction)
+
+[173/246] Compressing: fantasy_transparent/fantasy_008_royal_palace_section.png
+  Resized from 1560x1560 to 1024x1024
+  1.62MB → 0.92MB (43.3% reduction)
+
+[174/246] Compressing: fantasy_transparent/fantasy_021_thorny_bush.png
+  Resized from 1560x1560 to 1024x1024
+  1.92MB → 0.90MB (53.3% reduction)
+
+[175/246] Compressing: fantasy_transparent/15_FYe0srrkhYyzcaSsl1DH6H_1766540159520_na1fn_L2hvbWUvdWJ1bnR1L2NyeXN0YWxfZm9ybWF0aW9u.png
+  Resized from 1560x1560 to 1024x1024
+  1.65MB → 0.92MB (44.1% reduction)
+
+[176/246] Compressing: fantasy_transparent/30_9xfu9YKDPSGh87oyL6t4EV_1766540225946_na1fn_L2hvbWUvdWJ1bnR1L3RvcmNoX3Bvc3RfbGl0.png
+  Resized from 1560x1560 to 1024x1024
+  0.87MB → 0.59MB (32.3% reduction)
+
+[177/246] Compressing: fantasy_transparent/5_gciv3yy63pzuERU3zbaWjj_1766540160677_na1fn_L2hvbWUvdWJ1bnR1L3N0b25lX2NodXJjaF93aXRoX3NwaXJl.png
+  Resized from 1560x1560 to 1024x1024
+  2.18MB → 1.29MB (40.8% reduction)
+
+[178/246] Compressing: fantasy_transparent/10_Ees6xiUynJ8Hrm3WxXpXqs_1766540152972_na1fn_L2hvbWUvdWJ1bnR1L3N0b25lX3dlbGxfaG91c2U.png
+  Resized from 1560x1560 to 1024x1024
+  3.04MB → 1.51MB (50.4% reduction)
+
+[179/246] Compressing: fantasy_transparent/26_RyIOZFCU5BK3rMgbhNITU2_1766540217326_na1fn_L2hvbWUvdWJ1bnR1L3N0b25lX2JyaWRnZQ.png
+  Resized from 1560x1560 to 1024x1024
+  1.95MB → 1.10MB (43.8% reduction)
+
+[180/246] Compressing: fantasy_transparent/fantasy_005_blacksmith_workshop.png
+  Resized from 1560x1560 to 1024x1024
+  1.00MB → 0.61MB (38.4% reduction)
+
+[181/246] Compressing: fantasy_transparent/fantasy_038_stone_fountain.png
+  Resized from 1560x1560 to 1024x1024
+  1.85MB → 1.13MB (39.1% reduction)
+
+[182/246] Compressing: fantasy_transparent/14_A56ZLnj5v2zLIx8Vdqnar3_1766540158181_na1fn_L2hvbWUvdWJ1bnR1L3JvY2t5X291dGNyb3A.png
+  Resized from 1560x1560 to 1024x1024
+  2.07MB → 1.11MB (46.4% reduction)
+
+[183/246] Compressing: fantasy_transparent/fantasy_026_dirt_path_crossing.png
+  Resized from 1560x1560 to 1024x1024
+  1.58MB → 0.83MB (47.9% reduction)
+
+[184/246] Compressing: fantasy_transparent/fantasy_016_crystal_formation.png
+  Resized from 1560x1560 to 1024x1024
+  1.65MB → 0.92MB (44.1% reduction)
+
+[185/246] Compressing: fantasy_transparent/1_BaKHOCoUF1lfqhedT10Pqm_1766540168592_na1fn_L2hvbWUvdWJ1bnR1L3N0b25lX2Nhc3RsZV90b3dlcg.png
+  Resized from 1560x1560 to 1024x1024
+  1.72MB → 1.50MB (13.1% reduction)
+
+[186/246] Compressing: fantasy_transparent/33_2iycK7nUSxpplZnpHrATZP_1766540219975_na1fn_L2hvbWUvdWJ1bnR1L2NhbXBmaXJlX2Fzc2V0.png
+  Resized from 1560x1560 to 1024x1024
+  1.83MB → 1.01MB (45.1% reduction)
+
+[187/246] Compressing: fantasy_transparent/11_0XIgvPZXjUXTStkkHAPlsl_1766540165914_na1fn_L2hvbWUvdWJ1bnR1L3dvb2Rlbl93YXRjaHRvd2VyX2ZpbmFs.png
+  0.07MB → 0.07MB (0.0% reduction)
+
+[188/246] Compressing: fantasy_transparent/36_RCKhZT7CSWV5qbpXHHXjLH_1766540226205_na1fn_L2hvbWUvdWJ1bnR1L2hheV9iYWxlcw.png
+  Resized from 1560x1560 to 1024x1024
+  1.75MB → 0.96MB (45.2% reduction)
+
+[189/246] Compressing: fantasy_transparent/fantasy_015_rocky_outcrop.png
+  Resized from 1560x1560 to 1024x1024
+  2.07MB → 1.11MB (46.4% reduction)
+
+[190/246] Compressing: fantasy_transparent/17_Jv1e14nqQQoSa13BtDcp7R_1766540155777_na1fn_L2hvbWUvdWJ1bnR1L2FuY2llbnRfc3RvbmVfcnVpbnM.png
+  Resized from 1560x1560 to 1024x1024
+  2.08MB → 1.20MB (42.5% reduction)
+
+[191/246] Compressing: fantasy_transparent/2_HEl1j3cFGCVTavSBTOVxSv_1766540158749_na1fn_L2hvbWUvdWJ1bnR1L21lZGlldmFsX3RhdmVybg.png
+  Resized from 1560x1560 to 1024x1024
+  1.84MB → 1.13MB (38.7% reduction)
+
+[192/246] Compressing: fantasy_transparent/fantasy_036_barrel_cluster.png
+  Resized from 1560x1560 to 1024x1024
+  2.86MB → 1.58MB (44.7% reduction)
+
+[193/246] Compressing: fantasy_transparent/fantasy_032_wooden_sign_post.png
+  Resized from 1560x1560 to 1024x1024
+  0.69MB → 0.50MB (26.7% reduction)
+
+[194/246] Compressing: fantasy_transparent/fantasy_003_medieval_tavern.png
+  Resized from 1560x1560 to 1024x1024
+  1.84MB → 1.13MB (38.7% reduction)
+
+[195/246] Compressing: fantasy_transparent/16_y6W1kPxwLHosXqPAyG2hA6_1766540165187_na1fn_L2hvbWUvdWJ1bnR1L21hZ2ljYWxfZ2xvd2luZ19tdXNocm9vbQ.png
+  Resized from 1560x1560 to 1024x1024
+  1.58MB → 0.89MB (44.0% reduction)
+
+[196/246] Compressing: fantasy_transparent/6_Wzy3sEKaS0fPM6X3TO7xWe_1766540190242_na1fn_L2hvbWUvdWJ1bnR1L3RoYXRjaGVkX3Jvb2ZfZmFybWhvdXNlX3Yy.png
+  ERROR: image file is truncated
+
+[197/246] Compressing: fantasy/trees/palm_tree.png
+  0.29MB → 0.29MB (0.0% reduction)
+
+[198/246] Compressing: fantasy/trees/pine_tree.png
+  0.30MB → 0.30MB (0.0% reduction)
+
+[199/246] Compressing: fantasy/trees/oak_tree.png
+  0.23MB → 0.23MB (0.0% reduction)
+
+[200/246] Compressing: fantasy/trees/willow_tree.png
+  0.29MB → 0.29MB (0.0% reduction)
+
+[201/246] Compressing: fantasy/trees/cherry_blossom.png
+  0.21MB → 0.21MB (0.0% reduction)
+
+[202/246] Compressing: fantasy/trees/dead_tree.png
+  0.09MB → 0.09MB (0.0% reduction)
+
+[203/246] Compressing: fantasy/trees/large_ancient_tree.png
+  0.32MB → 0.32MB (0.0% reduction)
+
+[204/246] Compressing: fantasy/trees/small_sapling.png
+  0.23MB → 0.23MB (0.0% reduction)
+
+[205/246] Compressing: fantasy/buildings_residential/villa.png
+  0.28MB → 0.28MB (0.0% reduction)
+
+[206/246] Compressing: fantasy/buildings_residential/apartment_building.png
+  0.47MB → 0.47MB (0.0% reduction)
+
+[207/246] Compressing: fantasy/buildings_residential/cottage.png
+  0.18MB → 0.18MB (0.0% reduction)
+
+[208/246] Compressing: fantasy/buildings_residential/medium_house.png
+  0.27MB → 0.27MB (0.0% reduction)
+
+[209/246] Compressing: fantasy/buildings_residential/small_house.png
+  0.39MB → 0.39MB (0.0% reduction)
+
+[210/246] Compressing: fantasy/buildings_residential/large_house.png
+  0.33MB → 0.33MB (0.0% reduction)
+
+[211/246] Compressing: fantasy/special/windmill.png
+  0.25MB → 0.25MB (0.0% reduction)
+
+[212/246] Compressing: fantasy/special/fountain.png
+  0.35MB → 0.35MB (0.0% reduction)
+
+[213/246] Compressing: fantasy/special/water_tower.png
+  0.22MB → 0.22MB (0.0% reduction)
+
+[214/246] Compressing: fantasy/special/stable_yard.png
+  0.23MB → 0.23MB (0.0% reduction)
+
+[215/246] Compressing: fantasy/buildings_commercial/office_building.png
+  0.27MB → 0.27MB (0.0% reduction)
+
+[216/246] Compressing: fantasy/buildings_commercial/stable.png
+  0.20MB → 0.20MB (0.0% reduction)
+
+[217/246] Compressing: fantasy/buildings_commercial/restaurant.png
+  0.17MB → 0.17MB (0.0% reduction)
+
+[218/246] Compressing: fantasy/buildings_commercial/mall.png
+  0.23MB → 0.23MB (0.0% reduction)
+
+[219/246] Compressing: fantasy/buildings_commercial/warehouse.png
+  0.23MB → 0.23MB (0.0% reduction)
+
+[220/246] Compressing: fantasy/buildings_commercial/shop_store.png
+  0.20MB → 0.20MB (0.0% reduction)
+
+[221/246] Compressing: fantasy/buildings_public/hospital.png
+  0.52MB → 0.52MB (0.0% reduction)
+
+[222/246] Compressing: fantasy/buildings_public/fire_station.png
+  0.30MB → 0.30MB (0.0% reduction)
+
+[223/246] Compressing: fantasy/buildings_public/school.png
+  0.20MB → 0.20MB (0.0% reduction)
+
+[224/246] Compressing: fantasy/buildings_public/church.png
+  0.21MB → 0.21MB (0.0% reduction)
+
+[225/246] Compressing: fantasy/buildings_public/library.png
+  0.32MB → 0.32MB (0.0% reduction)
+
+[226/246] Compressing: fantasy/buildings_public/police_station.png
+  0.23MB → 0.23MB (0.0% reduction)
+
+[227/246] Compressing: fantasy/buildings_public/stadium.png
+  0.53MB → 0.53MB (0.0% reduction)
+
+[228/246] Compressing: fantasy/buildings_public/town_hall.png
+  0.32MB → 0.32MB (0.0% reduction)
+
+[229/246] Compressing: fantasy/greenery/bush_large.png
+  0.18MB → 0.18MB (0.0% reduction)
+
+[230/246] Compressing: fantasy/greenery/flower_bed.png
+  0.17MB → 0.17MB (0.0% reduction)
+
+[231/246] Compressing: fantasy/greenery/park_bench.png
+  0.32MB → 0.32MB (0.0% reduction)
+
+[232/246] Compressing: fantasy/greenery/bush_small.png
+  0.22MB → 0.22MB (0.0% reduction)
+
+[233/246] Compressing: fantasy/greenery/lamp_post.png
+  0.24MB → 0.24MB (0.0% reduction)
+
+[234/246] Compressing: fantasy/greenery/rock_large.png
+  0.26MB → 0.26MB (0.0% reduction)
+
+[235/246] Compressing: fantasy/greenery/pond.png
+  0.18MB → 0.18MB (0.0% reduction)
+
+[236/246] Compressing: fantasy/greenery/grass_patch_large.png
+  0.03MB → 0.03MB (0.0% reduction)
+
+[237/246] Compressing: fantasy/greenery/grass_patch_small.png
+  0.04MB → 0.04MB (0.0% reduction)
+
+[238/246] Compressing: fantasy/greenery/rock_small.png
+  0.07MB → 0.07MB (0.0% reduction)
+
+[239/246] Compressing: fantasy/roads/straight_road_horizontal.png
+  0.19MB → 0.19MB (0.0% reduction)
+
+[240/246] Compressing: fantasy/roads/straight_road_vertical.png
+  0.49MB → 0.49MB (0.0% reduction)
+
+[241/246] Compressing: fantasy/roads/road_corner_90.png
+  0.33MB → 0.33MB (0.0% reduction)
+
+[242/246] Compressing: fantasy/roads/cross_intersection.png
+  0.49MB → 0.49MB (0.0% reduction)
+
+[243/246] Compressing: fantasy/roads/t_junction.png
+  0.35MB → 0.35MB (0.0% reduction)
+
+[244/246] Compressing: fantasy/roads/curved_road.png
+  0.31MB → 0.31MB (0.0% reduction)
+
+[245/246] Compressing: fantasy/roads/roundabout.png
+  0.59MB → 0.59MB (0.0% reduction)
+
+[246/246] Compressing: fantasy/roads/bridge_segment.png
+  0.30MB → 0.30MB (0.0% reduction)
+
+======================================================================
+COMPRESSION SUMMARY
+======================================================================
+Total files processed: 246
+Successful: 245
+Failed: 1
+
+Original total size: 385.64 MB
+Compressed total size: 127.00 MB
+Total space saved: 258.64 MB
+Overall reduction: 67.1%
+======================================================================
+
+✅ Compression complete!

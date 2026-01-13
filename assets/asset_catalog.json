@@ -1,0 +1,1095 @@
+{
+  "metadata": {
+    "total_assets": 120,
+    "themes": {
+      "fantasy": 40,
+      "scifi": 40,
+      "normal": 40
+    },
+    "resolution": "256x256",
+    "format": "PNG",
+    "style": "top-down 2D"
+  },
+  "assets": [
+    {
+      "id": 1,
+      "name": "small_wooden_cottage",
+      "description": "Small wooden cottage",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_001_small_wooden_cottage.png",
+      "path": "fantasy/fantasy_001_small_wooden_cottage.png"
+    },
+    {
+      "id": 2,
+      "name": "stone_castle_tower",
+      "description": "Stone castle tower",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_002_stone_castle_tower.png",
+      "path": "fantasy/fantasy_002_stone_castle_tower.png"
+    },
+    {
+      "id": 3,
+      "name": "medieval_tavern",
+      "description": "Medieval tavern",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_003_medieval_tavern.png",
+      "path": "fantasy/fantasy_003_medieval_tavern.png"
+    },
+    {
+      "id": 4,
+      "name": "wizard_tower",
+      "description": "Wizard tower with glowing top",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_004_wizard_tower.png",
+      "path": "fantasy/fantasy_004_wizard_tower.png"
+    },
+    {
+      "id": 5,
+      "name": "blacksmith_workshop",
+      "description": "Blacksmith workshop",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_005_blacksmith_workshop.png",
+      "path": "fantasy/fantasy_005_blacksmith_workshop.png"
+    },
+    {
+      "id": 6,
+      "name": "stone_church_with_spire",
+      "description": "Stone church with spire",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_006_stone_church_with_spire.png",
+      "path": "fantasy/fantasy_006_stone_church_with_spire.png"
+    },
+    {
+      "id": 7,
+      "name": "thatched_roof_farmhouse",
+      "description": "Thatched roof farmhouse",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_007_thatched_roof_farmhouse.png",
+      "path": "fantasy/fantasy_007_thatched_roof_farmhouse.png"
+    },
+    {
+      "id": 8,
+      "name": "royal_palace_section",
+      "description": "Royal palace section",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_008_royal_palace_section.png",
+      "path": "fantasy/fantasy_008_royal_palace_section.png"
+    },
+    {
+      "id": 9,
+      "name": "guard_barracks",
+      "description": "Guard barracks",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_009_guard_barracks.png",
+      "path": "fantasy/fantasy_009_guard_barracks.png"
+    },
+    {
+      "id": 10,
+      "name": "merchant_shop",
+      "description": "Merchant shop",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_010_merchant_shop.png",
+      "path": "fantasy/fantasy_010_merchant_shop.png"
+    },
+    {
+      "id": 11,
+      "name": "stone_well_house",
+      "description": "Stone well house",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_011_stone_well_house.png",
+      "path": "fantasy/fantasy_011_stone_well_house.png"
+    },
+    {
+      "id": 12,
+      "name": "wooden_watchtower",
+      "description": "Wooden watchtower",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_012_wooden_watchtower.png",
+      "path": "fantasy/fantasy_012_wooden_watchtower.png"
+    },
+    {
+      "id": 13,
+      "name": "large_oak_tree",
+      "description": "Large oak tree",
+      "theme": "fantasy",
+      "category": "natural",
+      "filename": "fantasy_013_large_oak_tree.png",
+      "path": "fantasy/fantasy_013_large_oak_tree.png"
+    },
+    {
+      "id": 14,
+      "name": "pine_tree_cluster",
+      "description": "Pine tree cluster",
+      "theme": "fantasy",
+      "category": "natural",
+      "filename": "fantasy_014_pine_tree_cluster.png",
+      "path": "fantasy/fantasy_014_pine_tree_cluster.png"
+    },
+    {
+      "id": 15,
+      "name": "rocky_outcrop",
+      "description": "Rocky outcrop",
+      "theme": "fantasy",
+      "category": "natural",
+      "filename": "fantasy_015_rocky_outcrop.png",
+      "path": "fantasy/fantasy_015_rocky_outcrop.png"
+    },
+    {
+      "id": 16,
+      "name": "crystal_formation",
+      "description": "Crystal formation",
+      "theme": "fantasy",
+      "category": "natural",
+      "filename": "fantasy_016_crystal_formation.png",
+      "path": "fantasy/fantasy_016_crystal_formation.png"
+    },
+    {
+      "id": 17,
+      "name": "magical_glowing_mushroom",
+      "description": "Magical glowing mushroom",
+      "theme": "fantasy",
+      "category": "natural",
+      "filename": "fantasy_017_magical_glowing_mushroom.png",
+      "path": "fantasy/fantasy_017_magical_glowing_mushroom.png"
+    },
+    {
+      "id": 18,
+      "name": "ancient_stone_ruins",
+      "description": "Ancient stone ruins",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_018_ancient_stone_ruins.png",
+      "path": "fantasy/fantasy_018_ancient_stone_ruins.png"
+    },
+    {
+      "id": 19,
+      "name": "waterfall_tile",
+      "description": "Waterfall tile",
+      "theme": "fantasy",
+      "category": "natural",
+      "filename": "fantasy_019_waterfall_tile.png",
+      "path": "fantasy/fantasy_019_waterfall_tile.png"
+    },
+    {
+      "id": 20,
+      "name": "flower_garden_patch",
+      "description": "Flower garden patch",
+      "theme": "fantasy",
+      "category": "natural",
+      "filename": "fantasy_020_flower_garden_patch.png",
+      "path": "fantasy/fantasy_020_flower_garden_patch.png"
+    },
+    {
+      "id": 21,
+      "name": "thorny_bush",
+      "description": "Thorny bush",
+      "theme": "fantasy",
+      "category": "natural",
+      "filename": "fantasy_021_thorny_bush.png",
+      "path": "fantasy/fantasy_021_thorny_bush.png"
+    },
+    {
+      "id": 22,
+      "name": "mystical_portal_stone",
+      "description": "Mystical portal stone",
+      "theme": "fantasy",
+      "category": "decorative",
+      "filename": "fantasy_022_mystical_portal_stone.png",
+      "path": "fantasy/fantasy_022_mystical_portal_stone.png"
+    },
+    {
+      "id": 23,
+      "name": "cobblestone_road_straight",
+      "description": "Cobblestone road straight",
+      "theme": "fantasy",
+      "category": "road",
+      "filename": "fantasy_023_cobblestone_road_straight.png",
+      "path": "fantasy/fantasy_023_cobblestone_road_straight.png"
+    },
+    {
+      "id": 24,
+      "name": "cobblestone_road_corner",
+      "description": "Cobblestone road corner",
+      "theme": "fantasy",
+      "category": "road",
+      "filename": "fantasy_024_cobblestone_road_corner.png",
+      "path": "fantasy/fantasy_024_cobblestone_road_corner.png"
+    },
+    {
+      "id": 25,
+      "name": "dirt_path_straight",
+      "description": "Dirt path straight",
+      "theme": "fantasy",
+      "category": "road",
+      "filename": "fantasy_025_dirt_path_straight.png",
+      "path": "fantasy/fantasy_025_dirt_path_straight.png"
+    },
+    {
+      "id": 26,
+      "name": "dirt_path_crossing",
+      "description": "Dirt path crossing",
+      "theme": "fantasy",
+      "category": "road",
+      "filename": "fantasy_026_dirt_path_crossing.png",
+      "path": "fantasy/fantasy_026_dirt_path_crossing.png"
+    },
+    {
+      "id": 27,
+      "name": "stone_bridge",
+      "description": "Stone bridge",
+      "theme": "fantasy",
+      "category": "road",
+      "filename": "fantasy_027_stone_bridge.png",
+      "path": "fantasy/fantasy_027_stone_bridge.png"
+    },
+    {
+      "id": 28,
+      "name": "wooden_bridge",
+      "description": "Wooden bridge",
+      "theme": "fantasy",
+      "category": "road",
+      "filename": "fantasy_028_wooden_bridge.png",
+      "path": "fantasy/fantasy_028_wooden_bridge.png"
+    },
+    {
+      "id": 29,
+      "name": "wooden_fence_section",
+      "description": "Wooden fence section",
+      "theme": "fantasy",
+      "category": "decorative",
+      "filename": "fantasy_029_wooden_fence_section.png",
+      "path": "fantasy/fantasy_029_wooden_fence_section.png"
+    },
+    {
+      "id": 30,
+      "name": "stone_wall_section",
+      "description": "Stone wall section",
+      "theme": "fantasy",
+      "category": "building",
+      "filename": "fantasy_030_stone_wall_section.png",
+      "path": "fantasy/fantasy_030_stone_wall_section.png"
+    },
+    {
+      "id": 31,
+      "name": "torch_post_lit",
+      "description": "Torch post (lit)",
+      "theme": "fantasy",
+      "category": "decorative",
+      "filename": "fantasy_031_torch_post_lit.png",
+      "path": "fantasy/fantasy_031_torch_post_lit.png"
+    },
+    {
+      "id": 32,
+      "name": "wooden_sign_post",
+      "description": "Wooden sign post",
+      "theme": "fantasy",
+      "category": "decorative",
+      "filename": "fantasy_032_wooden_sign_post.png",
+      "path": "fantasy/fantasy_032_wooden_sign_post.png"
+    },
+    {
+      "id": 33,
+      "name": "market_stall",
+      "description": "Market stall",
+      "theme": "fantasy",
+      "category": "decorative",
+      "filename": "fantasy_033_market_stall.png",
+      "path": "fantasy/fantasy_033_market_stall.png"
+    },
+    {
+      "id": 34,
+      "name": "campfire",
+      "description": "Campfire",
+      "theme": "fantasy",
+      "category": "decorative",
+      "filename": "fantasy_034_campfire.png",
+      "path": "fantasy/fantasy_034_campfire.png"
+    },
+    {
+      "id": 35,
+      "name": "treasure_chest",
+      "description": "Treasure chest",
+      "theme": "fantasy",
+      "category": "decorative",
+      "filename": "fantasy_035_treasure_chest.png",
+      "path": "fantasy/fantasy_035_treasure_chest.png"
+    },
+    {
+      "id": 36,
+      "name": "barrel_cluster",
+      "description": "Barrel cluster",
+      "theme": "fantasy",
+      "category": "decorative",
+      "filename": "fantasy_036_barrel_cluster.png",
+      "path": "fantasy/fantasy_036_barrel_cluster.png"
+    },
+    {
+      "id": 37,
+      "name": "hay_bales",
+      "description": "Hay bales",
+      "theme": "fantasy",
+      "category": "decorative",
+      "filename": "fantasy_037_hay_bales.png",
+      "path": "fantasy/fantasy_037_hay_bales.png"
+    },
+    {
+      "id": 38,
+      "name": "stone_fountain",
+      "description": "Stone fountain",
+      "theme": "fantasy",
+      "category": "decorative",
+      "filename": "fantasy_038_stone_fountain.png",
+      "path": "fantasy/fantasy_038_stone_fountain.png"
+    },
+    {
+      "id": 39,
+      "name": "wooden_cart",
+      "description": "Wooden cart",
+      "theme": "fantasy",
+      "category": "decorative",
+      "filename": "fantasy_039_wooden_cart.png",
+      "path": "fantasy/fantasy_039_wooden_cart.png"
+    },
+    {
+      "id": 40,
+      "name": "banner_flag_pole",
+      "description": "Banner flag pole",
+      "theme": "fantasy",
+      "category": "decorative",
+      "filename": "fantasy_040_banner_flag_pole.png",
+      "path": "fantasy/fantasy_040_banner_flag_pole.png"
+    },
+    {
+      "id": 41,
+      "name": "hab_dome",
+      "description": "Futuristic hab-dome",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_041_hab_dome.png",
+      "path": "scifi/scifi_041_hab_dome.png"
+    },
+    {
+      "id": 42,
+      "name": "energy_reactor_building",
+      "description": "Energy reactor building",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_042_energy_reactor_building.png",
+      "path": "scifi/scifi_042_energy_reactor_building.png"
+    },
+    {
+      "id": 43,
+      "name": "landing_pad_platform",
+      "description": "Landing pad platform",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_043_landing_pad_platform.png",
+      "path": "scifi/scifi_043_landing_pad_platform.png"
+    },
+    {
+      "id": 44,
+      "name": "research_laboratory",
+      "description": "Research laboratory",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_044_research_laboratory.png",
+      "path": "scifi/scifi_044_research_laboratory.png"
+    },
+    {
+      "id": 45,
+      "name": "cyberpunk_neon_shop",
+      "description": "Cyberpunk neon shop",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_045_cyberpunk_neon_shop.png",
+      "path": "scifi/scifi_045_cyberpunk_neon_shop.png"
+    },
+    {
+      "id": 46,
+      "name": "communication_tower",
+      "description": "Communication tower",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_046_communication_tower.png",
+      "path": "scifi/scifi_046_communication_tower.png"
+    },
+    {
+      "id": 47,
+      "name": "automated_factory",
+      "description": "Automated factory",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_047_automated_factory.png",
+      "path": "scifi/scifi_047_automated_factory.png"
+    },
+    {
+      "id": 48,
+      "name": "security_checkpoint",
+      "description": "Security checkpoint",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_048_security_checkpoint.png",
+      "path": "scifi/scifi_048_security_checkpoint.png"
+    },
+    {
+      "id": 49,
+      "name": "medical_bay_station",
+      "description": "Medical bay station",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_049_medical_bay_station.png",
+      "path": "scifi/scifi_049_medical_bay_station.png"
+    },
+    {
+      "id": 50,
+      "name": "cargo_warehouse",
+      "description": "Cargo warehouse",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_050_cargo_warehouse.png",
+      "path": "scifi/scifi_050_cargo_warehouse.png"
+    },
+    {
+      "id": 51,
+      "name": "control_center_hub",
+      "description": "Control center hub",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_051_control_center_hub.png",
+      "path": "scifi/scifi_051_control_center_hub.png"
+    },
+    {
+      "id": 52,
+      "name": "defense_turret_station",
+      "description": "Defense turret station",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_052_defense_turret_station.png",
+      "path": "scifi/scifi_052_defense_turret_station.png"
+    },
+    {
+      "id": 53,
+      "name": "metallic_tree_artificial",
+      "description": "Metallic tree (artificial)",
+      "theme": "scifi",
+      "category": "decorative",
+      "filename": "scifi_053_metallic_tree_artificial.png",
+      "path": "scifi/scifi_053_metallic_tree_artificial.png"
+    },
+    {
+      "id": 54,
+      "name": "holographic_projection_pad",
+      "description": "Holographic projection pad",
+      "theme": "scifi",
+      "category": "decorative",
+      "filename": "scifi_054_holographic_projection_pad.png",
+      "path": "scifi/scifi_054_holographic_projection_pad.png"
+    },
+    {
+      "id": 55,
+      "name": "energy_crystal_cluster",
+      "description": "Energy crystal cluster",
+      "theme": "scifi",
+      "category": "natural",
+      "filename": "scifi_055_energy_crystal_cluster.png",
+      "path": "scifi/scifi_055_energy_crystal_cluster.png"
+    },
+    {
+      "id": 56,
+      "name": "terraformed_rock_formation",
+      "description": "Terraformed rock formation",
+      "theme": "scifi",
+      "category": "natural",
+      "filename": "scifi_056_terraformed_rock_formation.png",
+      "path": "scifi/scifi_056_terraformed_rock_formation.png"
+    },
+    {
+      "id": 57,
+      "name": "bioluminescent_plant_pod",
+      "description": "Bioluminescent plant pod",
+      "theme": "scifi",
+      "category": "decorative",
+      "filename": "scifi_057_bioluminescent_plant_pod.png",
+      "path": "scifi/scifi_057_bioluminescent_plant_pod.png"
+    },
+    {
+      "id": 58,
+      "name": "crashed_satellite_debris",
+      "description": "Crashed satellite debris",
+      "theme": "scifi",
+      "category": "decorative",
+      "filename": "scifi_058_crashed_satellite_debris.png",
+      "path": "scifi/scifi_058_crashed_satellite_debris.png"
+    },
+    {
+      "id": 59,
+      "name": "energy_field_generator",
+      "description": "Energy field generator",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_059_energy_field_generator.png",
+      "path": "scifi/scifi_059_energy_field_generator.png"
+    },
+    {
+      "id": 60,
+      "name": "data_terminal_kiosk",
+      "description": "Data terminal kiosk",
+      "theme": "scifi",
+      "category": "decorative",
+      "filename": "scifi_060_data_terminal_kiosk.png",
+      "path": "scifi/scifi_060_data_terminal_kiosk.png"
+    },
+    {
+      "id": 61,
+      "name": "atmospheric_processor",
+      "description": "Atmospheric processor",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_061_atmospheric_processor.png",
+      "path": "scifi/scifi_061_atmospheric_processor.png"
+    },
+    {
+      "id": 62,
+      "name": "solar_panel_array",
+      "description": "Solar panel array",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_062_solar_panel_array.png",
+      "path": "scifi/scifi_062_solar_panel_array.png"
+    },
+    {
+      "id": 63,
+      "name": "metallic_road_straight",
+      "description": "Metallic road straight (glowing edges)",
+      "theme": "scifi",
+      "category": "road",
+      "filename": "scifi_063_metallic_road_straight.png",
+      "path": "scifi/scifi_063_metallic_road_straight.png"
+    },
+    {
+      "id": 64,
+      "name": "metallic_road_corner",
+      "description": "Metallic road corner",
+      "theme": "scifi",
+      "category": "road",
+      "filename": "scifi_064_metallic_road_corner.png",
+      "path": "scifi/scifi_064_metallic_road_corner.png"
+    },
+    {
+      "id": 65,
+      "name": "energy_grid_pathway_straight",
+      "description": "Energy grid pathway straight",
+      "theme": "scifi",
+      "category": "road",
+      "filename": "scifi_065_energy_grid_pathway_straight.png",
+      "path": "scifi/scifi_065_energy_grid_pathway_straight.png"
+    },
+    {
+      "id": 66,
+      "name": "energy_grid_pathway_crossing",
+      "description": "Energy grid pathway crossing",
+      "theme": "scifi",
+      "category": "road",
+      "filename": "scifi_066_energy_grid_pathway_crossing.png",
+      "path": "scifi/scifi_066_energy_grid_pathway_crossing.png"
+    },
+    {
+      "id": 67,
+      "name": "elevated_bridge_platform",
+      "description": "Elevated bridge platform",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_067_elevated_bridge_platform.png",
+      "path": "scifi/scifi_067_elevated_bridge_platform.png"
+    },
+    {
+      "id": 68,
+      "name": "teleporter_pad_connection",
+      "description": "Teleporter pad connection",
+      "theme": "scifi",
+      "category": "decorative",
+      "filename": "scifi_068_teleporter_pad_connection.png",
+      "path": "scifi/scifi_068_teleporter_pad_connection.png"
+    },
+    {
+      "id": 69,
+      "name": "energy_barrier_fence",
+      "description": "Energy barrier fence",
+      "theme": "scifi",
+      "category": "decorative",
+      "filename": "scifi_069_energy_barrier_fence.png",
+      "path": "scifi/scifi_069_energy_barrier_fence.png"
+    },
+    {
+      "id": 70,
+      "name": "reinforced_wall_section",
+      "description": "Reinforced wall section",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_070_reinforced_wall_section.png",
+      "path": "scifi/scifi_070_reinforced_wall_section.png"
+    },
+    {
+      "id": 71,
+      "name": "neon_light_post",
+      "description": "Neon light post",
+      "theme": "scifi",
+      "category": "decorative",
+      "filename": "scifi_071_neon_light_post.png",
+      "path": "scifi/scifi_071_neon_light_post.png"
+    },
+    {
+      "id": 72,
+      "name": "holographic_sign",
+      "description": "Holographic sign",
+      "theme": "scifi",
+      "category": "decorative",
+      "filename": "scifi_072_holographic_sign.png",
+      "path": "scifi/scifi_072_holographic_sign.png"
+    },
+    {
+      "id": 73,
+      "name": "cargo_container",
+      "description": "Cargo container",
+      "theme": "scifi",
+      "category": "decorative",
+      "filename": "scifi_073_cargo_container.png",
+      "path": "scifi/scifi_073_cargo_container.png"
+    },
+    {
+      "id": 74,
+      "name": "drone_charging_station",
+      "description": "Drone charging station",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_074_drone_charging_station.png",
+      "path": "scifi/scifi_074_drone_charging_station.png"
+    },
+    {
+      "id": 75,
+      "name": "supply_crate_stack",
+      "description": "Supply crate stack",
+      "theme": "scifi",
+      "category": "decorative",
+      "filename": "scifi_075_supply_crate_stack.png",
+      "path": "scifi/scifi_075_supply_crate_stack.png"
+    },
+    {
+      "id": 76,
+      "name": "fuel_tank_cluster",
+      "description": "Fuel tank cluster",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_076_fuel_tank_cluster.png",
+      "path": "scifi/scifi_076_fuel_tank_cluster.png"
+    },
+    {
+      "id": 77,
+      "name": "hover_vehicle_parking",
+      "description": "Hover vehicle parking",
+      "theme": "scifi",
+      "category": "road",
+      "filename": "scifi_077_hover_vehicle_parking.png",
+      "path": "scifi/scifi_077_hover_vehicle_parking.png"
+    },
+    {
+      "id": 78,
+      "name": "fountain_with_energy_stream",
+      "description": "Fountain with energy stream",
+      "theme": "scifi",
+      "category": "decorative",
+      "filename": "scifi_078_fountain_with_energy_stream.png",
+      "path": "scifi/scifi_078_fountain_with_energy_stream.png"
+    },
+    {
+      "id": 79,
+      "name": "robot_maintenance_station",
+      "description": "Robot maintenance station",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_079_robot_maintenance_station.png",
+      "path": "scifi/scifi_079_robot_maintenance_station.png"
+    },
+    {
+      "id": 80,
+      "name": "antenna_array",
+      "description": "Antenna array",
+      "theme": "scifi",
+      "category": "building",
+      "filename": "scifi_080_antenna_array.png",
+      "path": "scifi/scifi_080_antenna_array.png"
+    },
+    {
+      "id": 81,
+      "name": "suburban_house",
+      "description": "Suburban house",
+      "theme": "normal",
+      "category": "building",
+      "filename": "normal_081_suburban_house.png",
+      "path": "normal/normal_081_suburban_house.png"
+    },
+    {
+      "id": 82,
+      "name": "office_building_section",
+      "description": "Office building section",
+      "theme": "normal",
+      "category": "building",
+      "filename": "normal_082_office_building_section.png",
+      "path": "normal/normal_082_office_building_section.png"
+    },
+    {
+      "id": 83,
+      "name": "modern_coffee_shop",
+      "description": "Coffee shop",
+      "theme": "normal",
+      "category": "building",
+      "filename": "normal_083_modern_coffee_shop.png",
+      "path": "normal/normal_083_modern_coffee_shop.png"
+    },
+    {
+      "id": 84,
+      "name": "gas_station",
+      "description": "Gas station",
+      "theme": "normal",
+      "category": "building",
+      "filename": "normal_084_gas_station.png",
+      "path": "normal/normal_084_gas_station.png"
+    },
+    {
+      "id": 85,
+      "name": "apartment_building",
+      "description": "Apartment building",
+      "theme": "normal",
+      "category": "building",
+      "filename": "normal_085_apartment_building.png",
+      "path": "normal/normal_085_apartment_building.png"
+    },
+    {
+      "id": 86,
+      "name": "school_building",
+      "description": "School building",
+      "theme": "normal",
+      "category": "building",
+      "filename": "normal_086_school_building.png",
+      "path": "normal/normal_086_school_building.png"
+    },
+    {
+      "id": 87,
+      "name": "fire_station",
+      "description": "Fire station",
+      "theme": "normal",
+      "category": "building",
+      "filename": "normal_087_fire_station.png",
+      "path": "normal/normal_087_fire_station.png"
+    },
+    {
+      "id": 88,
+      "name": "police_station",
+      "description": "Police station",
+      "theme": "normal",
+      "category": "building",
+      "filename": "normal_088_police_station.png",
+      "path": "normal/normal_088_police_station.png"
+    },
+    {
+      "id": 89,
+      "name": "hospital_section",
+      "description": "Hospital section",
+      "theme": "normal",
+      "category": "building",
+      "filename": "normal_089_hospital_section.png",
+      "path": "normal/normal_089_hospital_section.png"
+    },
+    {
+      "id": 90,
+      "name": "shopping_mall_entrance",
+      "description": "Shopping mall entrance",
+      "theme": "normal",
+      "category": "building",
+      "filename": "normal_090_shopping_mall_entrance.png",
+      "path": "normal/normal_090_shopping_mall_entrance.png"
+    },
+    {
+      "id": 91,
+      "name": "restaurant",
+      "description": "Restaurant",
+      "theme": "normal",
+      "category": "building",
+      "filename": "normal_091_restaurant.png",
+      "path": "normal/normal_091_restaurant.png"
+    },
+    {
+      "id": 92,
+      "name": "park_pavilion",
+      "description": "Park pavilion",
+      "theme": "normal",
+      "category": "building",
+      "filename": "normal_092_park_pavilion.png",
+      "path": "normal/normal_092_park_pavilion.png"
+    },
+    {
+      "id": 93,
+      "name": "deciduous_tree",
+      "description": "Deciduous tree",
+      "theme": "normal",
+      "category": "natural",
+      "filename": "normal_093_deciduous_tree.png",
+      "path": "normal/normal_093_deciduous_tree.png"
+    },
+    {
+      "id": 94,
+      "name": "palm_tree",
+      "description": "Palm tree",
+      "theme": "normal",
+      "category": "natural",
+      "filename": "normal_094_palm_tree.png",
+      "path": "normal/normal_094_palm_tree.png"
+    },
+    {
+      "id": 95,
+      "name": "bush_cluster",
+      "description": "Bush cluster",
+      "theme": "normal",
+      "category": "natural",
+      "filename": "normal_095_bush_cluster.png",
+      "path": "normal/normal_095_bush_cluster.png"
+    },
+    {
+      "id": 96,
+      "name": "park_bench_with_tree",
+      "description": "Park bench with tree",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_096_park_bench_with_tree.png",
+      "path": "normal/normal_096_park_bench_with_tree.png"
+    },
+    {
+      "id": 97,
+      "name": "pond_water_tile",
+      "description": "Pond water tile",
+      "theme": "normal",
+      "category": "natural",
+      "filename": "normal_097_pond_water_tile.png",
+      "path": "normal/normal_097_pond_water_tile.png"
+    },
+    {
+      "id": 98,
+      "name": "flower_bed",
+      "description": "Flower bed",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_098_flower_bed.png",
+      "path": "normal/normal_098_flower_bed.png"
+    },
+    {
+      "id": 99,
+      "name": "grass_patch_with_flowers",
+      "description": "Grass patch with flowers",
+      "theme": "normal",
+      "category": "natural",
+      "filename": "normal_099_grass_patch_with_flowers.png",
+      "path": "normal/normal_099_grass_patch_with_flowers.png"
+    },
+    {
+      "id": 100,
+      "name": "rock_garden",
+      "description": "Rock garden",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_100_rock_garden.png",
+      "path": "normal/normal_100_rock_garden.png"
+    },
+    {
+      "id": 101,
+      "name": "hedge_row",
+      "description": "Hedge row",
+      "theme": "normal",
+      "category": "natural",
+      "filename": "normal_101_hedge_row.png",
+      "path": "normal/normal_101_hedge_row.png"
+    },
+    {
+      "id": 102,
+      "name": "playground_equipment",
+      "description": "Playground equipment",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_102_playground_equipment.png",
+      "path": "normal/normal_102_playground_equipment.png"
+    },
+    {
+      "id": 103,
+      "name": "asphalt_road_straight",
+      "description": "Asphalt road straight",
+      "theme": "normal",
+      "category": "road",
+      "filename": "normal_103_asphalt_road_straight.png",
+      "path": "normal/normal_103_asphalt_road_straight.png"
+    },
+    {
+      "id": 104,
+      "name": "asphalt_road_corner",
+      "description": "Asphalt road corner",
+      "theme": "normal",
+      "category": "road",
+      "filename": "normal_104_asphalt_road_corner.png",
+      "path": "normal/normal_104_asphalt_road_corner.png"
+    },
+    {
+      "id": 105,
+      "name": "sidewalk_straight",
+      "description": "Sidewalk straight",
+      "theme": "normal",
+      "category": "road",
+      "filename": "normal_105_sidewalk_straight.png",
+      "path": "normal/normal_105_sidewalk_straight.png"
+    },
+    {
+      "id": 106,
+      "name": "sidewalk_crossing",
+      "description": "Sidewalk crossing",
+      "theme": "normal",
+      "category": "road",
+      "filename": "normal_106_sidewalk_crossing.png",
+      "path": "normal/normal_106_sidewalk_crossing.png"
+    },
+    {
+      "id": 107,
+      "name": "concrete_bridge",
+      "description": "Concrete bridge",
+      "theme": "normal",
+      "category": "road",
+      "filename": "normal_107_concrete_bridge.png",
+      "path": "normal/normal_107_concrete_bridge.png"
+    },
+    {
+      "id": 108,
+      "name": "crosswalk_intersection",
+      "description": "Crosswalk intersection",
+      "theme": "normal",
+      "category": "road",
+      "filename": "normal_108_crosswalk_intersection.png",
+      "path": "normal/normal_108_crosswalk_intersection.png"
+    },
+    {
+      "id": 109,
+      "name": "chain_link_fence",
+      "description": "Chain-link fence",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_109_chain_link_fence.png",
+      "path": "normal/normal_109_chain_link_fence.png"
+    },
+    {
+      "id": 110,
+      "name": "brick_wall_section",
+      "description": "Brick wall section",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_110_brick_wall_section.png",
+      "path": "normal/normal_110_brick_wall_section.png"
+    },
+    {
+      "id": 111,
+      "name": "street_lamp",
+      "description": "Street lamp",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_111_street_lamp.png",
+      "path": "normal/normal_111_street_lamp.png"
+    },
+    {
+      "id": 112,
+      "name": "traffic_sign_post",
+      "description": "Traffic sign post",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_112_traffic_sign_post.png",
+      "path": "normal/normal_112_traffic_sign_post.png"
+    },
+    {
+      "id": 113,
+      "name": "bus_stop_shelter",
+      "description": "Bus stop shelter",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_113_bus_stop_shelter.png",
+      "path": "normal/normal_113_bus_stop_shelter.png"
+    },
+    {
+      "id": 114,
+      "name": "park_bench",
+      "description": "Park bench",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_114_park_bench.png",
+      "path": "normal/normal_114_park_bench.png"
+    },
+    {
+      "id": 115,
+      "name": "trash_bin",
+      "description": "Trash bin",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_115_trash_bin.png",
+      "path": "normal/normal_115_trash_bin.png"
+    },
+    {
+      "id": 116,
+      "name": "fire_hydrant",
+      "description": "Fire hydrant",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_116_fire_hydrant.png",
+      "path": "normal/normal_116_fire_hydrant.png"
+    },
+    {
+      "id": 117,
+      "name": "mailbox",
+      "description": "Mailbox",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_117_mailbox.png",
+      "path": "normal/normal_117_mailbox.png"
+    },
+    {
+      "id": 118,
+      "name": "parking_meter",
+      "description": "Parking meter",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_118_parking_meter.png",
+      "path": "normal/normal_118_parking_meter.png"
+    },
+    {
+      "id": 119,
+      "name": "bicycle_rack",
+      "description": "Bicycle rack",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_119_bicycle_rack.png",
+      "path": "normal/normal_119_bicycle_rack.png"
+    },
+    {
+      "id": 120,
+      "name": "news_stand_kiosk",
+      "description": "News stand kiosk",
+      "theme": "normal",
+      "category": "decorative",
+      "filename": "normal_120_news_stand_kiosk.png",
+      "path": "normal/normal_120_news_stand_kiosk.png"
+    }
+  ]
+}
