@@ -4016,6 +4016,10 @@ const MapBuilder = {
           <label class="form-label">Location Name</label>
           <input type="text" class="form-input" id="nodeLabel" value="${node.label}" placeholder="Enter location name">
         </div>
+        <div class="form-group">
+          <label class="form-label">Icon</label>
+          <input type="text" class="form-input" id="nodeIcon" value="${node.icon}" placeholder="Enter emoji" maxlength="2">
+        </div>
       `,
       `
         <button class="btn btn-danger" onclick="MapBuilder.deleteNode('${node.id}')">Delete</button>
@@ -4030,6 +4034,7 @@ const MapBuilder = {
     if (!node) return;
     
     const label = document.getElementById('nodeLabel').value;
+    const icon = document.getElementById('nodeIcon').value;
     
     if (!label) {
       alert('Please enter a location name');
@@ -4037,6 +4042,7 @@ const MapBuilder = {
     }
     
     node.label = label;
+    if (icon) node.icon = icon;
     
     AppState.save();
     Modal.close();
@@ -5664,16 +5670,8 @@ const HierarchyTree = {
     
     this.nodes = hierarchy.treeNodes;
     
-    // Check if modal already exists
-    let modal = document.getElementById('hierarchyTreeModal');
-    if (modal) {
-      // If it exists, just update the content and render
-      this.render();
-      return;
-    }
-    
     // Create modal
-    modal = document.createElement('div');
+    const modal = document.createElement('div');
     modal.id = 'hierarchyTreeModal';
     modal.style.cssText = `
       position: fixed;
@@ -5701,6 +5699,7 @@ const HierarchyTree = {
         <div style="padding: 1rem; border-bottom: 1px solid var(--border-color); display: flex; gap: 0.5rem; flex-wrap: wrap;">
           <button onclick="HierarchyTree.addRootNode()" style="padding: 0.5rem 1rem; background: var(--card-bg); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 6px; cursor: pointer; font-size: 0.875rem;">🌳 Add Root Node</button>
           <button onclick="HierarchyTree.resetLayout()" style="padding: 0.5rem 1rem; background: var(--card-bg); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 6px; cursor: pointer; font-size: 0.875rem;">🔄 Reset Layout</button>
+          <button onclick="HierarchyTree.exportAsImage()" style="padding: 0.5rem 1rem; background: var(--card-bg); color: var(--text-primary); border: 1px solid var(--border-color); border-radius: 6px; cursor: pointer; font-size: 0.875rem;">📷 Export Image</button>
         </div>
         
         <div id="hierarchyTreeCanvas" style="flex: 1; position: relative; overflow: auto; background: var(--bg-secondary);">
@@ -5815,22 +5814,13 @@ const HierarchyTree = {
         </div>
         
         <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
-          <button id="cancelNodeEdit" style="padding: 0.75rem 1.5rem; background: var(--bg-secondary); color: var(--text-primary); border: 2px solid var(--border-color); border-radius: 6px; cursor: pointer; font-weight: 600;">Cancel</button>
-          <button id="saveNodeEdit" style="padding: 0.75rem 1.5rem; background: var(--text-primary); color: var(--bg-primary); border: 2px solid var(--border-color); border-radius: 6px; cursor: pointer; font-weight: 600;">Save Changes</button>
+          <button onclick="this.closest('div[style*=\"position: fixed\"]').remove()" style="padding: 0.75rem 1.5rem; background: var(--bg-secondary); color: var(--text-primary); border: 2px solid var(--border-color); border-radius: 6px; cursor: pointer; font-weight: 600;">Cancel</button>
+          <button onclick="HierarchyTree.saveNodeEdit('${nodeId}')" style="padding: 0.75rem 1.5rem; background: var(--text-primary); color: var(--bg-primary); border: 2px solid var(--border-color); border-radius: 6px; cursor: pointer; font-weight: 600;">Save Changes</button>
         </div>
       </div>
     `;
     
     document.body.appendChild(modal);
-    
-    // Add event listeners after modal is added to DOM
-    document.getElementById('cancelNodeEdit').addEventListener('click', () => {
-      modal.remove();
-    });
-    
-    document.getElementById('saveNodeEdit').addEventListener('click', () => {
-      this.saveNodeEdit(nodeId);
-    });
   },
   
   saveNodeEdit(nodeId) {
@@ -5846,18 +5836,11 @@ const HierarchyTree = {
       node.emoji = emoji;
       node.color = color;
       this.save();
+      this.render();
     }
     
-    // Close edit modal - find the one with the higher z-index or specific content
-    const modals = document.querySelectorAll('div[style*="position: fixed"]');
-    modals.forEach(m => {
-      if (m.innerText.includes('Edit Node')) {
-        m.remove();
-      }
-    });
-    
-    // Refresh the existing hierarchy tree modal instead of reopening it
-    this.render();
+    // Close modal
+    document.querySelector('div[style*="position: fixed"]').remove();
   },
   
   deleteNode(nodeId) {
@@ -5895,18 +5878,6 @@ const HierarchyTree = {
   render() {
     const canvas = document.getElementById('hierarchyTreeCanvas');
     if (!canvas) return;
-    
-    if (this.nodes.length === 0) {
-      canvas.innerHTML = `
-        <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--text-secondary); text-align: center; font-size: 0.875rem;">
-          <div>
-            <p style="font-size: 1.25rem; margin-bottom: 0.5rem;">🌳 No nodes yet</p>
-            <p>Click "Add Root Node" to start building your hierarchy tree</p>
-          </div>
-        </div>
-      `;
-      return;
-    }
     
     canvas.innerHTML = '';
     
@@ -6970,22 +6941,6 @@ const Modal = {
           <input type="text" class="form-input" id="locType" value="${location.type}">
         </div>
         <div class="form-group">
-          <label class="form-label">Thumbnail Image (Optional)</label>
-          <div id="locationThumbnailDropZone" style="border: 2px dashed var(--gray-400); border-radius: 0.5rem; padding: 2rem; text-align: center; cursor: pointer; transition: all 0.3s; background: var(--gray-100);" ondragover="event.preventDefault(); this.style.borderColor='var(--primary-500)'; this.style.background='var(--primary-50)';" ondragleave="this.style.borderColor='var(--gray-400)'; this.style.background='var(--gray-100)';" ondrop="Modal.handleThumbnailDrop(event, 'locationThumbnail')" onclick="document.getElementById('locationThumbnailInput').click()">
-            <div id="locationThumbnailPreview" style="${location.thumbnail ? '' : 'display: none;'} margin-bottom: 1rem; position: relative;">
-              <img id="locationThumbnailPreviewImg" src="${location.thumbnail || ''}" style="max-width: 100%; max-height: 200px; border-radius: 0.5rem; cursor: pointer;" onclick="openImageLightbox(this.src)" />
-              <button type="button" onclick="Modal.deleteThumbnail('location')" style="position: absolute; top: 0.5rem; right: 0.5rem; background: rgba(220, 38, 38, 0.9); color: white; border: none; border-radius: 50%; width: 2rem; height: 2rem; cursor: pointer; font-size: 1.25rem; line-height: 1; display: flex; align-items: center; justify-content: center; transition: all 0.2s;" onmouseover="this.style.transform='scale(1.1)'; this.style.background='rgba(220, 38, 38, 1)';" onmouseout="this.style.transform='scale(1)'; this.style.background='rgba(220, 38, 38, 0.9)';" title="Remove thumbnail">×</button>
-            </div>
-            <div id="locationThumbnailPlaceholder" style="${location.thumbnail ? 'display: none;' : ''}">
-              <div style="font-size: 3rem; margin-bottom: 0.5rem;">📷</div>
-              <div style="font-weight: 600; margin-bottom: 0.25rem;">Drag & drop an image here</div>
-              <div style="font-size: 0.875rem; color: var(--gray-600);">or click to browse</div>
-            </div>
-          </div>
-          <input type="file" id="locationThumbnailInput" accept="image/*" style="display: none;" onchange="Modal.handleThumbnailFile(this, 'locationThumbnail')">
-          <input type="hidden" id="locationThumbnail" value="${location.thumbnail || ''}">
-        </div>
-        <div class="form-group">
           <label class="form-label">Description</label>
           <textarea class="form-textarea" id="locDescription">${location.description}</textarea>
         </div>
@@ -7008,6 +6963,7 @@ const Modal = {
       `,
       `
         <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+        <button class="btn btn-secondary" onclick="Modal.duplicateLocation('${id}')">Duplicate</button>
         <button class="btn btn-primary" onclick="Modal.updateLocation('${id}')">Save Changes</button>
       `
     );
@@ -7107,6 +7063,7 @@ const Modal = {
       `,
       `
         <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+        <button class="btn btn-secondary" onclick="Modal.duplicateCharacter('${id}')">Duplicate</button>
         <button class="btn btn-primary" onclick="Modal.updateCharacter('${id}')">Save Changes</button>
       `
     );
@@ -7208,6 +7165,7 @@ const Modal = {
       `,
       `
         <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+        <button class="btn btn-secondary" onclick="Modal.duplicateFaction('${id}')">Duplicate</button>
         <button class="btn btn-primary" onclick="Modal.updateFaction('${id}')">Save Changes</button>
       `
     );
@@ -7279,6 +7237,7 @@ const Modal = {
       `,
       `
         <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+        <button class="btn btn-secondary" onclick="Modal.duplicateEvent('${id}')">Duplicate</button>
         <button class="btn btn-primary" onclick="Modal.updateEvent('${id}')">Save Changes</button>
       `
     );
@@ -7343,6 +7302,7 @@ const Modal = {
       `,
       `
         <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+        <button class="btn btn-secondary" onclick="Modal.duplicateRule('${id}')">Duplicate</button>
         <button class="btn btn-primary" onclick="Modal.updateRule('${id}')">Save Changes</button>
       `
     );
@@ -7406,6 +7366,7 @@ const Modal = {
       `,
       `
         <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+        <button class="btn btn-secondary" onclick="Modal.duplicateTheme('${id}')">Duplicate</button>
         <button class="btn btn-primary" onclick="Modal.updateTheme('${id}')">Save Changes</button>
       `
     );
@@ -7469,7 +7430,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Practices</label><textarea class="form-textarea" id="relPractices">${r.practices}</textarea></div>
       <div class="form-group"><label class="form-label">Followers</label><input type="text" class="form-input" id="relFollowers" value="${r.followers}"></div>
       <div class="form-group"><label class="form-label">Sacred Sites</label><input type="text" class="form-input" id="relSites" value="${r.sites}"></div>
-    `, `<button class="btn btn-secondary" onclick="Modal.close()">Cancel</button><button class="btn btn-primary" onclick="Modal.updateReligion('${id}')">Save Changes</button></div>`);
+    `, `<button class="btn btn-secondary" onclick="Modal.close()">Cancel</button><button class="btn btn-secondary" onclick="Modal.duplicateReligion('${id}')">Duplicate</button><button class="btn btn-primary" onclick="Modal.updateReligion('${id}')">Save Changes</button></div>`);
   },
   updateReligion(id) {
     const r=AppState.currentWorld.religions.find(x=>x.id===id);if(!r)return;
@@ -7538,7 +7499,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Materials</label><input type="text" class="form-input" id="fashMaterials" value="${f.materials}"></div>
       <div class="form-group"><label class="form-label">Colors</label><input type="text" class="form-input" id="fashColors" value="${f.colors}"></div>
       <div class="form-group"><label class="form-label">Significance</label><input type="text" class="form-input" id="fashSignificance" value="${f.significance}"></div>
-    `, `<button class="btn btn-secondary" onclick="Modal.close()">Cancel</button><button class="btn btn-primary" onclick="Modal.updateFashion('${id}')">Save Changes</button></div>`);
+    `, `<button class="btn btn-secondary" onclick="Modal.close()">Cancel</button><button class="btn btn-secondary" onclick="Modal.duplicateFashion('${id}')">Duplicate</button><button class="btn btn-primary" onclick="Modal.updateFashion('${id}')">Save Changes</button></div>`);
   },
   updateFashion(id) {
     const f=AppState.currentWorld.fashions.find(x=>x.id===id);if(!f)return;
@@ -7607,7 +7568,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Source</label><input type="text" class="form-input" id="magSource" value="${m.source}"></div>
       <div class="form-group"><label class="form-label">Limitations</label><textarea class="form-textarea" id="magLimitations">${m.limitations}</textarea></div>
       <div class="form-group"><label class="form-label">Cost</label><input type="text" class="form-input" id="magCost" value="${m.cost}"></div>
-    `, `<button class="btn btn-secondary" onclick="Modal.close()">Cancel</button><button class="btn btn-primary" onclick="Modal.updateMagicSystem('${id}')">Save Changes</button></div>`);
+    `, `<button class="btn btn-secondary" onclick="Modal.close()">Cancel</button><button class="btn btn-secondary" onclick="Modal.duplicateMagicSystem('${id}')">Duplicate</button><button class="btn btn-primary" onclick="Modal.updateMagicSystem('${id}')">Save Changes</button></div>`);
   },
   updateMagicSystem(id) {
     const m=AppState.currentWorld.magicSystems.find(x=>x.id===id);if(!m)return;
@@ -7646,6 +7607,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Related Languages</label><input type="text" class="form-input" id="langRelated" value="${l.related}"></div>
     `, `
       <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+      <button class="btn btn-secondary" onclick="Modal.duplicateLanguage('${id}')">Duplicate</button>
       <button class="btn btn-primary" onclick="Modal.updateLanguage('${id}')">Save Changes</button>
     `);
   },
@@ -7686,6 +7648,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Trade Routes</label><input type="text" class="form-input" id="econRoutes" value="${e.routes}"></div>
     `, `
       <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+      <button class="btn btn-secondary" onclick="Modal.duplicateEconomy('${id}')">Duplicate</button>
       <button class="btn btn-primary" onclick="Modal.updateEconomy('${id}')">Save Changes</button>
     `);
   },
@@ -7726,6 +7689,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Current Conflicts</label><input type="text" class="form-input" id="polConflicts" value="${p.conflicts}"></div>
     `, `
       <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+      <button class="btn btn-secondary" onclick="Modal.duplicatePolitics('${id}')">Duplicate</button>
       <button class="btn btn-primary" onclick="Modal.updatePolitics('${id}')">Save Changes</button>
     `);
   },
@@ -7799,6 +7763,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Impact</label><textarea class="form-textarea" id="techImpact">${t.impact}</textarea></div>
     `, `
       <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+      <button class="btn btn-secondary" onclick="Modal.duplicateTechnology('${id}')">Duplicate</button>
       <button class="btn btn-primary" onclick="Modal.updateTechnology('${id}')">Save Changes</button>
     `);
   },
@@ -7871,6 +7836,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Danger Level</label><input type="text" class="form-input" id="ffDanger" value="${f.danger}"></div>
     `, `
       <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+      <button class="btn btn-secondary" onclick="Modal.duplicateFloraFauna('${id}')">Duplicate</button>
       <button class="btn btn-primary" onclick="Modal.updateFloraFauna('${id}')">Save Changes</button>
     `);
   },
@@ -7964,6 +7930,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Population</label><input type="text" class="form-input" id="crPopulation" value="${c.population}"></div>
     `, `
       <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+      <button class="btn btn-secondary" onclick="Modal.duplicateCreature('${id}')">Duplicate</button>
       <button class="btn btn-primary" onclick="Modal.updateCreature('${id}')">Save Changes</button>
     `);
   },
@@ -8048,6 +8015,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Significance</label><input type="text" class="form-input" id="cuisSignificance" value="${c.significance}"></div>
     `, `
       <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+      <button class="btn btn-secondary" onclick="Modal.duplicateCuisine('${id}')">Duplicate</button>
       <button class="btn btn-primary" onclick="Modal.updateCuisine('${id}')">Save Changes</button>
     `);
   },
@@ -8120,6 +8088,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Location</label><input type="text" class="form-input" id="artLocation" value="${a.location}"></div>
     `, `
       <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+      <button class="btn btn-secondary" onclick="Modal.duplicateArtifact('${id}')">Duplicate</button>
       <button class="btn btn-primary" onclick="Modal.updateArtifact('${id}')">Save Changes</button>
     `);
   },
@@ -8144,10 +8113,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Description</label><textarea class="form-textarea" id="siDescription" placeholder="Describe how this interaction works..."></textarea></div>
       <div class="form-group"><label class="form-label">Rules</label><textarea class="form-textarea" id="siRules" placeholder="Formal or informal rules governing this interaction..."></textarea></div>
       <div class="form-group"><label class="form-label">Consequences</label><textarea class="form-textarea" id="siConsequences" placeholder="What happens when rules are broken?"></textarea></div>
-    `, `
-      <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
-      <button class="btn btn-primary" onclick="Modal.saveSocialInteraction()">Save Changes</button>
-    `);
+    \`, \`<button class="btn btn-secondary" onclick="Modal.close()">Cancel</button><button class="btn btn-primary" onclick="Modal.saveSocialInteraction()">Add Interaction</button></div>`);
   },
   saveSocialInteraction() {
     AppState.currentWorld.socialInteractions.push({id:'si-'+Date.now(),name:document.getElementById('siName').value,type:document.getElementById('siType').value,participants:document.getElementById('siParticipants').value,nature:document.getElementById('siNature').value,description:document.getElementById('siDescription').value,rules:document.getElementById('siRules').value,consequences:document.getElementById('siConsequences').value});
@@ -8165,6 +8131,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Consequences</label><textarea class="form-textarea" id="siConsequences">${si.consequences||''}</textarea></div>
     `, `
       <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+      <button class="btn btn-secondary" onclick="Modal.duplicateSocialInteraction('${id}')">Duplicate</button>
       <button class="btn btn-primary" onclick="Modal.updateSocialInteraction('${id}')">Save Changes</button>
     `);
   },
@@ -8208,6 +8175,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Rank Symbols</label><input type="text" class="form-input" id="hierSymbols" value="${hier.symbols||''}"></div>
     `, `
       <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+      <button class="btn btn-secondary" onclick="Modal.duplicateHierarchy('${id}')">Duplicate</button>
       <button class="btn btn-primary" onclick="Modal.updateHierarchy('${id}')">Save Changes</button>
     `);
   },
@@ -8250,6 +8218,7 @@ const Modal = {
       <div class="form-group"><label class="form-label">Violations</label><textarea class="form-textarea" id="etiqViolations">${etiq.violations||''}</textarea></div>
      `, `
       <button class="btn btn-secondary" onclick="Modal.close()">Cancel</button>
+      <button class="btn btn-secondary" onclick="Modal.duplicateEtiquette('${id}')">Duplicate</button>
       <button class="btn btn-primary" onclick="Modal.updateEtiquette('${id}')">Save Changes</button>
     `);
   },
