@@ -3574,6 +3574,12 @@ const MapBuilder = {
     
     // Keyboard controls for selected asset or node
     document.addEventListener('keydown', (e) => {
+      // Ignore keyboard shortcuts when typing in input fields
+      const activeElement = document.activeElement;
+      if (activeElement && (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA')) {
+        return;
+      }
+      
       // Handle Cmd+Z / Ctrl+Z for undo
       if ((e.metaKey || e.ctrlKey) && e.key === 'z') {
         e.preventDefault();
